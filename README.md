@@ -53,3 +53,11 @@ Printed conversation notes include the exact supplied English Medicare and indep
 The preview includes the original 701×201 Van Berg Insurance Services logo, the secondary front-office line (925) 634-5702, and the supplied LinkedIn and X profiles. Ivan’s primary call/text number remains (925) 684-6712. The About section lists the supplied additional licensing states: Arizona, Hawaii, Nevada, Utah, North Carolina, Texas, and Washington; no additional license numbers or plan-availability claims are inferred.
 
 Mobile navigation uses an always-visible row of the four section links, with the language switch in the first row. There is no hidden menu, toggle state, modal, or focus trap. It works without JavaScript and at narrow widths wraps into two columns. Domain selection remains pending; no domain registration or new production launch is included.
+
+## Hero stock video
+
+The preview hero uses Alex Moliski’s Pexels forest-path footage (video 28903952), visibly credited and documented in `public/assets/forest-path.LICENSE.txt`. It is illustrative scenery, not Ivan’s office or clients. The original was visually reviewed across the clip; source and Pexels license were verified. A self-hosted 960×540 H.264 clip (~941 KiB, 6.5 seconds, no audio) and ~76 KiB poster avoid third-party playback requests.
+
+`public/hero-video.js` loads no video source until playback is allowed or requested. Mobile (600px and below), reduced-motion, data-saver, and hidden-page visitors start on the still image. A bilingual button supports manual play/pause. Autoplay rejection keeps the poster and allows a manual retry; load failure/timeout retains the still with an accessible status. Leaving the viewport, hiding the page, or enabling reduced motion/data saver pauses playback without auto-resuming. The opaque green text panel protects readability regardless of the frame. No JavaScript leaves a complete still-image hero. Deployment remains preview-only.
+
+The preview uses Van Berg Insurance Services as the leading company branding, per the user’s provisional direction. Ivan remains the named independent advisor in the hero, About section, and footer. This visual hierarchy does not assert ownership, employment status, a legal entity type, or a specific contractual relationship. Those details remain subject to client confirmation.

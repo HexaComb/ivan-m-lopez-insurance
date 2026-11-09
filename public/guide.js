@@ -1,3 +1,4 @@
+import { initializeHeroVideo } from './hero-video.js';
 /** Page-only state. No network calls, storage, tracking, or personal-data entry. */
 export function toggleQuestion(selected, id, text) {
   const next = new Map(selected);
@@ -63,3 +64,5 @@ export function initializeGuide(root) {
   selectTopic(root, root.querySelector('[data-topic]').dataset.topic);
 }
 if (typeof document !== 'undefined') document.querySelectorAll('[data-guide]').forEach(initializeGuide);
+
+if (typeof document !== 'undefined') document.querySelectorAll('[data-hero-video]').forEach(root => initializeHeroVideo(root));

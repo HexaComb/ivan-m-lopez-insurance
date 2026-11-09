@@ -20,3 +20,49 @@
 @media(max-width:800px){.header{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px}.header>.brand{grid-column:1;grid-row:1}.header>.lang{grid-column:2;grid-row:1}.header>.nav{grid-column:1/-1;grid-row:2;display:flex;justify-content:space-between;gap:10px;border-top:1px solid var(--line);padding-top:8px}.nav .section-link{display:block;padding:12px 0;min-height:44px}.footer-links{max-width:350px}}
 @media(max-width:600px){.header{gap:15px;padding-bottom:12px}.header>.lang{font-size:.76rem}.header>.nav{font-size:.78rem;gap:8px}.agency-logo{width:230px}.footer-links{justify-content:flex-start;max-width:none}.front-office{margin-top:24px}}
 @media(max-width:350px){.header>.nav{display:grid;grid-template-columns:1fr 1fr;column-gap:20px;row-gap:0}.nav .section-link{padding:12px 0}}
+/* Cinematic hero: solid-color overlays, never gradients. Text stays independent of footage. */
+.hero.hero-film{position:relative;isolation:isolate;display:block;width:100%;padding:48px 0 0;background:var(--ink);overflow:hidden}
+.hero-backdrop{position:absolute;inset:0;z-index:-2;background:var(--ink)}
+.hero-backdrop img,.hero-backdrop video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% center}
+.hero-backdrop video{opacity:0}
+.video-playing .hero-backdrop video{opacity:1}
+.hero-film:before{content:'';position:absolute;inset:0;background:#102c244d;z-index:-1}
+.hero-layout{display:grid;grid-template-columns:1.2fr .8fr;gap:65px;align-items:center}
+.hero-film .hero-copy{padding:35px;background:#173d32ed;border:1px solid #ffffff38;color:var(--paper)}
+.hero-film h1{font-size:clamp(3.4rem,5.3vw,5rem)}
+.hero-film h1 em{color:#dce6c5}
+.hero-film .hero-copy .eyebrow,.hero-film .hero-copy .small,.hero-film .hero-lead{color:#f0f1e8}
+.hero-film .live-dot{background:#dce6c5}
+.hero-film .hero-copy .button{background:var(--sage);border-color:var(--sage);color:var(--ink)}
+.hero-film .hero-copy .button:hover{background:white}
+.hero-film .hero-copy .text-link{color:var(--paper)}
+.hero-film .portrait-scene{max-width:350px;width:100%;margin:60px auto 0;padding-bottom:25px}
+.hero-film .portrait img{height:320px}
+.hero-film .portrait-caption{display:block}
+.hero-film .portrait-caption span{display:block;margin-top:8px;font-size:.65rem}
+.hero-film .scene-rail{color:white}
+.hero-film .margin-note{display:none}
+.hero-film .paper-seal{bottom:25px;right:-10px;width:105px;height:105px}
+.film-toolbar{display:flex;justify-content:space-between;align-items:center;gap:25px;margin-top:35px;padding:18px 0;color:var(--paper);border-top:1px solid #ffffff55}
+.film-toolbar>p{font:italic 1.1rem/1.4 Georgia,serif;margin:0}
+.film-controls{display:flex;align-items:center;justify-content:flex-end;gap:14px;flex-wrap:wrap}
+.film-controls button{background:var(--paper);color:var(--ink);border:1px solid var(--paper);border-radius:3px;min-height:44px;padding:10px 16px;font-size:.8rem}
+.film-controls button:disabled{opacity:.65}
+.film-controls a,.film-controls [role=status]{font-size:.65rem;max-width:240px;line-height:1.4}
+.film-controls [role=status]:empty{display:none}
+@media(max-width:1000px){.hero-layout{gap:30px;grid-template-columns:1.1fr .9fr}.hero-film .hero-copy{padding:27px}.hero-film .portrait-scene{max-width:310px}.hero-film .portrait img{height:285px}.hero-film h1{font-size:3.5rem}.film-toolbar{align-items:flex-start}.film-controls{max-width:280px}}
+@media(max-width:700px){.hero-layout{grid-template-columns:1fr;gap:30px}.hero.hero-film{padding-top:25px}.hero-film .hero-copy{padding:28px}.hero-film h1{font-size:clamp(3.05rem,10vw,4.2rem)}.hero-film .portrait-scene{margin:0 auto;max-width:300px}.hero-film .portrait img{height:270px}.hero-film .paper-seal{right:-8px}.film-toolbar{margin-top:25px;flex-direction:column;gap:16px}.film-controls{max-width:none;justify-content:flex-start}.film-toolbar>p{font-size:1rem}.hero-backdrop img,.hero-backdrop video{object-position:65% center}}
+@media(prefers-reduced-motion:reduce){.hero-backdrop video{transition:none}}
+@media print{.hero-film{display:none!important}}
+
+/* Company identity leads; Ivan remains the named independent advisor. */
+.company-brand{display:block;width:240px;max-width:100%;flex-shrink:0}
+.company-brand img{width:100%;height:auto;background:white}
+.footer-identity .agency-logo{margin-top:0}
+.advisor-brand{margin-top:24px;font-size:1.3rem}
+.advisor-brand small{font-size:.66rem;letter-spacing:.04em;text-transform:none;line-height:1.5}
+.contact-details .contact-company{font-family:Georgia,serif;font-size:1.25rem;line-height:1.35;margin-bottom:28px;color:var(--paper)}
+.hero-film .portrait-caption span{line-height:1.4}
+@media(max-width:1000px) and (min-width:801px){.company-brand{width:205px}.header{gap:18px}.header .nav{gap:16px}}
+@media(max-width:600px){.company-brand{width:190px}.header{column-gap:12px}.hero-film .portrait-caption span{font-size:.64rem}}
+@media(max-width:350px){.company-brand{width:170px}}

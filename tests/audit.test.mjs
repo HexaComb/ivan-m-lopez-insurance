@@ -37,3 +37,16 @@ test('mobile navigation cannot disappear; logo preserves dimensions and original
  assert.equal(png.readUInt32BE(20),201);
  assert.ok(css.includes('a:focus-visible'));
 });
+
+test('company branding leads while Ivan remains the independent advisor', () => {
+ for (const lang of ['en','es']) {
+  const html=page(lang);
+  const header=html.match(/<header[\s\S]*?<\/header>/)[0];
+  assert.ok(header.includes('class="brand company-brand"'));
+  assert.ok(header.includes('alt="Van Berg Insurance Services"'));
+  assert.ok(html.includes('class="brand advisor-brand">Ivan M. Lopez'));
+  assert.ok(html.includes(`<span>${copy[lang].role}</span>`));
+  assert.ok(html.includes(independence));
+  assert.doesNotMatch(html, /Ivan owns|owner of Van Berg|fundador|propietario|subsidiary|LLC/);
+ }
+});
