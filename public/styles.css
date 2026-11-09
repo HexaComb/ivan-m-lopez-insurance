@@ -66,3 +66,44 @@
 @media(max-width:1000px) and (min-width:801px){.company-brand{width:205px}.header{gap:18px}.header .nav{gap:16px}}
 @media(max-width:600px){.company-brand{width:190px}.header{column-gap:12px}.hero-film .portrait-caption span{font-size:.64rem}}
 @media(max-width:350px){.company-brand{width:170px}}
+/* A small illustrated coverage story. Static by default, no looping attention effects. */
+.coverage-moment{padding:85px 0 65px;background:#eef0e6;border-bottom:1px solid var(--line)}
+.everyday-intro{text-align:center;max-width:680px;margin:0 auto}
+.everyday-intro h2{font-size:clamp(2.5rem,4.2vw,3.8rem)}
+.everyday-intro>p:last-child{max-width:530px;margin:0 auto;color:var(--muted);font-size:.98rem}
+.care-canvas{max-width:760px;margin:20px auto -25px}
+.coverage-illustration{display:block;width:100%;height:auto;overflow:visible}
+.care-route{stroke-width:1.8;stroke-linecap:round}.route-base{stroke:#becbb2;stroke-dasharray:3 9}.route-ink{stroke:#6c8058}
+.orbit-disc{fill:#f9f8f1;stroke:#becbb2;stroke-width:1}
+.orbit-ring{stroke:#afbc9c;stroke-width:1;stroke-dasharray:2 7;opacity:.6}
+.medical-line{stroke:var(--ink);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.care-spark{stroke:#8a5835;stroke-width:1.7;stroke-linecap:round}
+.illustration-ground{stroke:#bac5ad;stroke-width:1.2;stroke-linecap:round}
+.care-orbit.is-selected .orbit-disc{fill:#dce5cd;stroke:#4c6b44;stroke-width:1.7}
+.care-orbit.is-selected .orbit-ring{opacity:1;stroke:#4c6b44;stroke-dasharray:none}
+.coverage-focus-controls{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;position:relative}
+.coverage-focus-controls button{background:transparent;border:1px solid #a8b79d;border-radius:30px;padding:14px 22px;color:var(--ink);font-size:.9rem;min-height:50px}
+.coverage-focus-controls button:hover{background:#e1e7d6}
+.coverage-focus-controls button[aria-pressed=true]{background:var(--ink);color:var(--paper);border-color:var(--ink);text-decoration:underline;text-underline-offset:5px}
+.coverage-detail-pages{max-width:650px;margin:30px auto 0;text-align:center}
+.coverage-detail-pages article{margin-bottom:30px}
+.coverage-detail-pages .eyebrow{font-size:.65rem;margin-bottom:12px}
+.coverage-detail-pages h3{font-family:Georgia,serif;font-size:1.75rem;font-weight:400;letter-spacing:-.025em;margin-bottom:14px}
+.coverage-detail-pages article>p:last-child{font-size:.95rem;color:var(--muted);line-height:1.7;margin:0}
+.coverage-moment.is-enhanced .coverage-detail-pages{min-height:180px}
+.coverage-purpose{text-align:center;font-size:.78rem;margin:12px 0 0;color:var(--muted)}
+@media(prefers-reduced-motion:no-preference){
+ .coverage-focus-controls button{transition:background-color .25s,color .25s,border-color .25s}
+ .orbit-disc,.orbit-ring{transition:fill .4s,stroke .4s,opacity .4s}
+ .care-canvas.is-drawn .route-ink{animation:coverage-route-draw 1.8s cubic-bezier(.3,.1,.3,1) both}
+ .care-canvas.is-drawn .medical-line{animation:coverage-ink-arrive 1s ease-out both}
+ .care-canvas.is-drawn [data-art=prescriptions] .medical-line{animation-delay:.2s}
+ .care-canvas.is-drawn [data-art=costs] .medical-line{animation-delay:.4s}
+ .care-canvas.is-drawn .care-spark{animation:coverage-ink-arrive 1s .5s ease-out both}
+ .coverage-row .arrow{transition:transform .25s}.coverage-row>a:hover .arrow{transform:translate(2px,-2px)}
+ .add-question:active{transform:scale(.93)}
+ @keyframes coverage-route-draw{from{stroke-dasharray:1;stroke-dashoffset:1}to{stroke-dasharray:1;stroke-dashoffset:0}}
+ @keyframes coverage-ink-arrive{from{opacity:.2}to{opacity:1}}
+}
+@media(max-width:600px){.coverage-moment{padding:58px 0 45px}.everyday-intro .eyebrow{font-size:.64rem}.everyday-intro h2{font-size:2.8rem}.care-canvas{margin:24px -10px 0}.coverage-focus-controls{gap:8px}.coverage-focus-controls button{font-size:.78rem;padding:12px 15px;min-height:46px}.coverage-detail-pages{margin-top:26px}.coverage-detail-pages h3{font-size:1.55rem}.coverage-moment.is-enhanced .coverage-detail-pages{min-height:215px}.coverage-purpose{font-size:.74rem}}
+@media print{.coverage-moment{display:none!important}}

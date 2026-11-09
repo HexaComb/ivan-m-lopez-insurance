@@ -1,3 +1,4 @@
+import { initializeCoverageMotion } from './coverage-motion.js';
 import { initializeHeroVideo } from './hero-video.js';
 /** Page-only state. No network calls, storage, tracking, or personal-data entry. */
 export function toggleQuestion(selected, id, text) {
@@ -66,3 +67,5 @@ export function initializeGuide(root) {
 if (typeof document !== 'undefined') document.querySelectorAll('[data-guide]').forEach(initializeGuide);
 
 if (typeof document !== 'undefined') document.querySelectorAll('[data-hero-video]').forEach(root => initializeHeroVideo(root));
+
+if (typeof document !== 'undefined') initializeCoverageMotion(document);
