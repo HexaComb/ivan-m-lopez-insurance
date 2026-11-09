@@ -34,4 +34,16 @@ GitHub Actions validates both pages and saves the static build as an artifact. I
 
 Recommended Cloudflare Pages Git integration: select this repository and production branch; build command `npm run check`; output directory `dist`; Node.js version 22. Git integration authorization or credential creation must be approved before setup. The website needs no runtime secrets. Do not commit Cloudflare tokens or client correspondence.
 
-Deployment connection remains pending repository creation and approved GitHub/Cloudflare setup. No deployment is claimed by this scaffold.
+The original website is already deployed in production. The creative-coverage-guide branch contains a separate redesign for preview and review only; these local changes do not authorize or claim a production deployment.
+
+## Creative coverage guide (local redesign)
+
+The editorial direction uses a paper portrait, restrained green/cream palette, bespoke insurance illustrations, and a question-led field guide. It draws on the user’s AAC interactive color lab, Ruiz trade-specific storytelling, and Unreelviews editorial restraint without copying their trade imagery. There are no decorative sequential numbers, gradients, invented logos, or stock-client claims.
+
+`public/guide.js` progressively enhances four server-rendered guide topics. Visitors can choose a starting point, add/remove questions across topics, clear the list, and print their questions. The notes are in memory for this page only: no cookies, local storage, requests, submissions, or personal-data fields. Reloading or changing language resets the list. With JavaScript disabled, every topic and question remains visible; optional interactive controls are hidden. The language switch uses separate static pages.
+
+The content security policy allows first-party scripts only. Reduced-motion visitors receive no transition animation. All guide controls are native buttons with pressed states and visible focus, and question counts are announced politely. `tests/guide.test.mjs` covers selection, repeated/invalid topic changes, bilingual content parity, reset/print wiring, disclosure preservation, and privacy/presentation guards. Browser visual, responsive, keyboard, and print-preview review remains a separate verification step.
+
+No publishing or deployment is part of this local redesign. Existing client/compliance/translation review requirements above still apply.
+
+Printed conversation notes include the exact supplied English Medicare and independent-broker disclosures; Spanish prints also retain the Spanish disclosure translation. Branding and social links are omitted from print.
