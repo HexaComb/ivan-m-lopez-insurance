@@ -4,6 +4,10 @@ export function toggleQuestion(selected, id, text) {
   if (next.has(id)) next.delete(id); else next.set(id, text);
   return next;
 }
+export function questionCountLabel(count, pluralLabel, lang = 'en') {
+  if (count === 1) return lang.startsWith('es') ? '1 pregunta seleccionada' : '1 question selected';
+  return `${count} ${pluralLabel}`;
+}
 export function selectTopic(root, id) {
   const panels = [...root.querySelectorAll('[data-panel]')];
   if (!panels.some(panel => panel.dataset.panel === id)) return false;
@@ -33,7 +37,7 @@ export function initializeGuide(root) {
       button.setAttribute('aria-label', `${active ? root.dataset.addedLabel : root.dataset.addLabel}: ${button.parentElement.querySelector('span').textContent}`);
     });
     root.querySelector('[data-empty]').hidden = selected.size > 0;
-    root.querySelector('[data-note-count]').textContent = `${selected.size} ${root.dataset.countLabel}`;
+    root.querySelector('[data-note-count]').textContent = questionCountLabel(selected.size, root.dataset.countLabel, root.ownerDocument.documentElement?.lang);
     print.disabled = clear.disabled = selected.size === 0;
   }
   root.querySelectorAll('[data-topic]').forEach(button => {

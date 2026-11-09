@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { toggleQuestion, selectTopic } from '../public/guide.js';
+import { toggleQuestion, selectTopic, questionCountLabel } from '../public/guide.js';
 import { guide, page, disclosure, independence } from '../scripts/build.mjs';
 import { readFile } from 'node:fs/promises';
 
@@ -82,6 +82,7 @@ test('guide initialization, cross-topic notes, clear focus, and print wiring wor
  assert.equal(singles['[data-notes]'].hidden,false);
  assert.equal(panels.filter(p=>!p.hidden).length,1);
  questions[0].events.click();
+ assert.equal(singles['[data-note-count]'].textContent,'1 question selected');
  topics[1].events.click();
  questions[3].events.click();
  assert.equal(singles['[data-note-list]'].children.length,2);
@@ -107,4 +108,13 @@ test('print retains readable disclosures while omitting footer branding', async 
  assert.doesNotMatch(print, /#contact,\.footer,/);
  assert.ok(print.includes('.footer{display:block'));
  assert.ok(print.includes('.disclosures{font-size:10pt;color:black'));
+});
+
+test('question count uses singular English and Spanish and preserves plural counts', () => {
+ assert.equal(questionCountLabel(1, 'questions selected', 'en'), '1 question selected');
+ assert.equal(questionCountLabel(1, 'preguntas seleccionadas', 'es'), '1 pregunta seleccionada');
+ assert.equal(questionCountLabel(1, 'preguntas seleccionadas', 'es-MX'), '1 pregunta seleccionada');
+ assert.equal(questionCountLabel(0, 'questions selected', 'en'), '0 questions selected');
+ assert.equal(questionCountLabel(2, 'preguntas seleccionadas', 'es'), '2 preguntas seleccionadas');
+ assert.equal(questionCountLabel(1, 'questions selected'), '1 question selected');
 });
