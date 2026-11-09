@@ -23,7 +23,7 @@ The supplied form-consent wording is preserved as the exported `consent` constan
 
 - Client review of all marketing copy and Spanish translations, including disclosures. The supplied English Medicare disclosure and independent-broker statement remain on both language pages.
 - Confirm current required Medicare wording with the client's compliance reviewer. Inclusion of supplied wording is not legal approval.
-- Add the supplied VB logo once a usable original is available. The Gmail attachment download failed; no substitute logo has been invented.
+- The supplied original Van Berg Insurance Services logo is included in the footer, unmodified and at its original aspect ratio. Confirm brand usage during client sign-off.
 - Confirm domain, office time zone, and any additional state-license display requirements. No domain has been purchased or implied.
 - Review photo/brand publication permissions as part of client sign-off.
 - Remove `noindex,nofollow` from HTML, `X-Robots-Tag` from `_headers`, and the disallow rule in `robots.txt` only after launch approval.
@@ -47,3 +47,9 @@ The content security policy allows first-party scripts only. Reduced-motion visi
 No publishing or deployment is part of this local redesign. Existing client/compliance/translation review requirements above still apply.
 
 Printed conversation notes include the exact supplied English Medicare and independent-broker disclosures; Spanish prints also retain the Spanish disclosure translation. Branding and social links are omitted from print.
+
+## Verified audit additions
+
+The preview includes the original 701×201 Van Berg Insurance Services logo, the secondary front-office line (925) 634-5702, and the supplied LinkedIn and X profiles. Ivan’s primary call/text number remains (925) 684-6712. The About section lists the supplied additional licensing states: Arizona, Hawaii, Nevada, Utah, North Carolina, Texas, and Washington; no additional license numbers or plan-availability claims are inferred.
+
+Mobile navigation uses an always-visible row of the four section links, with the language switch in the first row. There is no hidden menu, toggle state, modal, or focus trap. It works without JavaScript and at narrow widths wraps into two columns. Domain selection remains pending; no domain registration or new production launch is included.
