@@ -75,17 +75,12 @@ test('autoplay rejection allows manual retry; media error restores still with st
  assert.equal(failed.classes.has('video-playing'),false);
  assert.equal(failed.status.textContent,'Video unavailable. Still image shown.');
 });
-test('hero markup has static fallback, no eager source/autoplay, and local-media CSP',async()=>{
+test('current client preview contains no video, tree poster, or playback loader',async()=>{
  for(const lang of ['en','es']){
   const html=page(lang);
-  const video=html.match(/<video[^>]*>/)[0];
-  assert.ok(video.includes('muted loop playsinline preload="none"'));
-  assert.ok(video.includes('data-src="/assets/forest-path.mp4"'));
-  assert.doesNotMatch(video,/\ssrc=|autoplay/);
-  assert.ok(html.includes('data-video-toggle'));
-  assert.ok(html.includes(lang==='en'?'Pause video':'Pausar video'));
-  assert.ok(html.includes('Alex Moliski / Pexels'));
+  assert.doesNotMatch(html, /<video|forest-path|data-hero-video|data-video-toggle/);
+  assert.ok(html.includes('class="advisor-portrait"'));
  }
- assert.ok((await readFile(new URL('../public/_headers',import.meta.url),'utf8')).includes("media-src 'self'"));
- assert.ok((await stat(new URL('../public/assets/forest-path.mp4',import.meta.url))).size<1_100_000);
+ const script=await readFile(new URL('../public/guide.js',import.meta.url),'utf8');
+ assert.doesNotMatch(script, /hero-video|initializeHeroVideo/);
 });

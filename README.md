@@ -17,7 +17,7 @@ Open http://localhost:4173. English is `/`; Spanish is `/es/`. Run `npm run buil
 
 The site does not collect or store visitor information. Callback/appointment requests go through the displayed call or text links. There is deliberately no fake success message or unconnected lead form. No analytics, tracking cookies, externally hosted fonts, or third-party scripts are included.
 
-The supplied form-consent wording is preserved as the exported `consent` constant for future integration. Before adding a form, approve its purpose, secure destination, privacy policy and retention rules, implement consent, and test actual delivery. Do not collect medical details or Medicare identifiers in a general lead form.
+The supplied form-consent wording is preserved as the exported `consent` constant for future integration. Before activating the disabled preview fields, approve its purpose, secure destination, privacy policy and retention rules, implement consent, and test actual delivery. Do not collect medical details or Medicare identifiers in a general lead form.
 
 ## Review before launch
 
@@ -67,3 +67,11 @@ The preview uses Van Berg Insurance Services as the leading company branding, pe
 The preview includes an original SVG coverage story connecting doctors/networks, prescription coverage, and costs. The illustration uses a stethoscope, prescription bottle/capsule, and coverage shield, with a brief drawn connecting line. Bilingual focus buttons explain insurance questions, not medical care; the section explicitly distinguishes insurance guidance from medical advice.
 
 `public/coverage-motion.js` progressively enhances this section and selected existing section entrances. All content and artwork are visible without JavaScript. Topic controls have pressed states and a polite announcement area. The illustration draws once in 1.8 seconds; section entrances finish in 650 ms and topic transitions in 350 ms. No decorative effect loops, scroll-jacks, or moves the page. Repeated active-topic clicks do not replay effects. Reduced-motion users get static artwork and immediate content changes; enabling reduced motion cancels active effects. Backgrounding stops effects. IntersectionObserver and Web Animations are optional, with functional fallbacks. No animation dependency, extra network request, or medical-service claim is added. The separate hero video's existing play/pause and reduced-motion behavior remains unchanged.
+
+## Senior-friendly client feedback (current preview)
+
+The current preview supersedes the prior cinematic hero: there is no video, tree poster, or video-loader import in either page. Unused media assets and their provenance remain in the repository only. The hero uses Ivan’s real portrait on white. Surfaces are white, body type is 20px, and smaller labels are at least 16px. The Spanish link reads “Ayuda En Español.” Ivan’s advisory services are prominently described as completely free and without obligation, with an explicit explanation that insurance plans can have premiums and other costs. Walk-ins are welcome; appointment times are confirmed by phone.
+
+A clearly marked, disabled callback/appointment prototype shows the requested name, phone, optional email, Medicare/Part A/Part B choices, and consent. It contains no form element, action, submit control, enabled input, data-collection code, or availability slots. Exact supplied English consent appears on both pages, with a Spanish translation on the Spanish page. Calling remains functional. Do not activate fields until the receiving destination, privacy/retention requirements, availability source, and consent handling are approved and actual delivery is tested. No medical information is collected by this preview.
+
+The brief medical-themed coverage illustration and accessible focus controls remain; reduced-motion and no-JavaScript fallbacks are unchanged. Browser QA should check both languages at mobile sizes and zoom, especially the longer Spanish navigation label. No client email or production update is part of this revision.

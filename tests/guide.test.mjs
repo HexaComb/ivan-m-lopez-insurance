@@ -107,7 +107,7 @@ test('print retains readable disclosures while omitting footer branding', async 
  assert.ok(print.includes('.footer-top,.copyright'));
  assert.doesNotMatch(print, /#contact,\.footer,/);
  assert.ok(print.includes('.footer{display:block'));
- assert.ok(print.includes('.disclosures{font-size:10pt;color:black'));
+ assert.ok(print.includes('.disclosures{font-size:12pt;color:black'));
 });
 
 test('question count uses singular English and Spanish and preserves plural counts', () => {
