@@ -208,3 +208,41 @@ body,.soft,.coverage-moment,.guide-index,.notes-sheet{background:#fff}
   main :is(a,button,summary,input,select),.footer a{scroll-margin-bottom:calc(100px + env(safe-area-inset-bottom,0px))}
 }
 @media print{.site-header-shell,.floating-language{display:none!important}body{padding-bottom:0}}
+
+/* Client feedback: the supplied logo green frames a quiet, welcoming hero. */
+:root{--brand-green:#8dbb4a}
+.senior-hero{grid-template-columns:minmax(0,1.35fr) minmax(0,.65fr);align-items:center;gap:38px;border:2px solid var(--brand-green);padding:22px;margin-top:28px;margin-bottom:36px;border-radius:8px}
+.senior-hero .hero-copy{max-width:none;background:var(--brand-green);padding:38px;border-radius:4px;color:var(--ink)}
+.senior-hero .eyebrow,.senior-hero .hero-lead,.senior-hero .small,.senior-hero .service-promise p{color:var(--ink)}
+.senior-hero .eyebrow{font-size:.95rem}
+.senior-hero h1{font-size:clamp(2.65rem,4.1vw,3.5rem);line-height:1.1}
+.senior-hero .service-promise{border-left-color:var(--ink);margin:25px 0;padding-left:18px}
+.senior-hero .service-promise h2{font-size:1.15rem}
+.senior-hero .hero-actions{display:grid;grid-template-columns:1fr;align-items:stretch;gap:14px}
+.hero-actions .button{width:100%;min-height:60px;line-height:1.45;text-align:center;background:var(--ink);border-color:var(--ink);color:#fff}
+.hero-actions .button:hover{background:#0c2c21;color:white}
+.hero-actions .secondary{background:white;color:var(--ink);border-color:var(--ink)}
+.hero-actions .secondary:hover{background:#f2f7eb;color:var(--ink)}
+.hero-contact-box{text-align:center}
+.hero-sms{display:inline-flex;align-items:center;min-height:44px;margin-top:4px;font-size:.95rem;font-weight:700}
+.senior-hero a:focus-visible{outline:3px solid #173d32;outline-offset:4px}
+.advisor-portrait{justify-self:center;margin-inline:0;padding:0 8px}
+.advisor-portrait img{border:1px solid var(--line);box-shadow:8px 8px 0 var(--brand-green);max-height:480px}
+.advisor-portrait figcaption{padding-top:25px}
+.coverage-focus-controls{display:grid;grid-template-columns:1fr 1.35fr 1fr;gap:14px;align-items:stretch;max-width:1120px;margin:auto}
+.coverage-focus-controls button{border-radius:8px;line-height:1.45;font-size:1rem;padding:18px;min-height:80px}
+.coverage-detail-pages{max-width:850px;text-align:left;border-left:4px solid var(--brand-green);padding:10px 0 10px 28px;margin-top:32px}
+.coverage-detail-pages article{margin-bottom:0}
+.coverage-detail-pages article>p:last-child{white-space:pre-line}
+.coverage-moment.is-enhanced .coverage-detail-pages{min-height:0}
+.coverage-purpose{max-width:850px;margin:26px auto 0;line-height:1.6}
+.faq details p{white-space:pre-line;line-height:1.75}
+#questions.split{grid-template-columns:.8fr 1.2fr;gap:65px}
+.faq summary{font-size:1.05rem;font-weight:600;min-height:48px;align-items:center}
+.faq summary span{flex-shrink:0}
+.topbar,.header .nav,.menu-panel>.lang,.eyebrow,.small,.disclosures,.copyright,.trust .wrap,.advisor-portrait figcaption,.service-promise p,.coverage-purpose,.additional-licenses h3,.additional-licenses p,.contact-details h3,.front-office a,.footer-links,.advisor-brand small,.prototype-consent label,.menu-contact p,.menu-call,.floating-language{font-size:.95rem}
+.disclosures{line-height:1.7}
+@media(max-width:1024px){.menu-ready .menu-panel>.lang,.menu-ready .menu-toggle,.menu-contact p,.menu-call{font-size:.95rem}.senior-hero{gap:28px;padding:18px}.senior-hero .hero-copy{padding:30px}.coverage-focus-controls{grid-template-columns:1fr}.coverage-focus-controls button{min-height:62px}}
+@media(max-width:800px){.senior-hero{grid-template-columns:1fr;gap:36px}.senior-hero .hero-copy{padding:30px}.advisor-portrait{max-width:330px;padding-bottom:18px}#questions.split{grid-template-columns:1fr;gap:26px}.question-mark{display:none}}
+@media(max-width:600px){.senior-hero{width:calc(100% - 24px);padding:10px;margin-top:18px;margin-bottom:24px}.senior-hero .hero-copy{padding:24px 19px}.senior-hero h1{font-size:clamp(2.1rem,8.6vw,2.7rem)}.senior-hero .service-promise{padding-left:14px}.senior-hero .service-promise h2{font-size:1.08rem}.hero-actions .button{padding:16px 12px;font-size:1rem}.advisor-portrait{max-width:290px}.coverage-detail-pages{padding-left:18px}.coverage-detail-pages h3{font-size:1.5rem}.everyday-intro h2{font-size:2.3rem}.trust .wrap,.footer-links,.brand small{font-size:.95rem}.coverage-focus-controls button{font-size:1rem}}
+@media print{#questions{display:block!important}.faq details{break-inside:avoid}.faq details>p{display:block!important}.faq{font-size:12pt}.question-mark{display:none}}

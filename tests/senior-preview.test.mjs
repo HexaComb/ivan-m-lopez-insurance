@@ -5,7 +5,7 @@ import {page,consent,independence,disclosure} from '../scripts/build.mjs';
 for(const lang of ['en','es']){
  test(`${lang}: services, costs, walk-ins and static senior hero are clear`,()=>{
   const html=page(lang);
-  assert.ok(html.includes(lang==='en'?'Ivan’s services are completely free. No obligation.':'Los servicios de Ivan son completamente gratuitos. Sin compromiso.'));
+  assert.ok(html.includes(lang==='en'?'Our services are completely free. No obligation.':'Nuestros servicios son completamente gratuitos. Sin compromiso.'));
   assert.ok(html.includes(lang==='en'?'Insurance plans may have premiums and other costs.':'Los planes de seguro pueden tener primas y otros costos.'));
   assert.ok(html.includes(lang==='en'?'Walk-ins are welcome.':'Aceptamos visitas sin cita.'));
   assert.doesNotMatch(html,/<video|forest-path|data-video-toggle/);

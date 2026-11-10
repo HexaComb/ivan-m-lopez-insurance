@@ -89,3 +89,13 @@ The client’s static hero, 20px body type, free-service/cost clarification, dis
 At 1024px and below, a static bottom-right language shortcut reads “Ayuda En Español” on the English page and opens the existing Spanish page. The Spanish page provides the equivalent “English” return link. It uses native links without a JavaScript dependency, new contact flow, tracking, or personal-data collection. Safe-area offsets, a 54px minimum target, bottom scroll clearance, and extra footer space keep it usable on mobile. While the mobile menu is open, its own language link remains available and the floating duplicate is hidden to avoid overlap.
 
 Above 1024px, the existing language link remains in the full desktop navbar, and the full-width header stays on screen while scrolling. Desktop anchor offsets prevent the sticky header from covering destination headings. The floating shortcut is hidden on desktop and in print.
+
+## Client feedback revision, November 10
+
+The current preview supersedes the printable field-guide interface. It uses the supplied Van Berg logo green (#8dbb4a) for the hero text panel and contrast frame, with dark readable text, a white page, and Ivan’s original portrait. Matt Medicares was reviewed for its contrasting hero, clear consultation/phone hierarchy, and personal introduction; none of its branding, testimonials, carrier counts, or other business claims were copied.
+
+The hero consultation button goes to the disabled callback/appointment preview. Its second box provides the requested call-or-text wording, plus a separate SMS link so both actions work on supported devices. It does not claim a booking is completed. The three illustrated service buttons now show the supplied Medicare Advantage, Medicare Supplement with Prescription Drug Plan, and Employer & Group Health Plans descriptions. First-person language is used in marketing copy; the supplied legal wording stays unchanged.
+
+Yami’s 11 supplied FAQ answers replace the question-selection and print interface. Native details/summary dropdowns work without JavaScript. The appointment FAQ is deliberately adapted to call/text only until the online service is connected and tested. English source content and Spanish translations live in scripts/client-feedback.mjs. Spanish translation and insurance/compliance review remain required before launch. The supplied green logo is unmodified; black/white alternatives have not yet been received.
+
+No production merge, domain purchase, client outreach, live calendar, or enabled data collection is included. npm run check covers the client requirements plus existing navigation, progressive enhancement, accessibility, and disclosure tests. Historical guide/video modules remain unused by the rendered pages.
