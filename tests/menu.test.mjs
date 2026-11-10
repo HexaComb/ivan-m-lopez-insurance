@@ -150,7 +150,7 @@ test('resizing during a closing animation cannot hide desktop navigation later',
 test('menu styles support narrow viewports, visible focus, and optional motion without decorative counters', async () => {
   const css = await readFile(new URL('../public/styles.css', import.meta.url), 'utf8');
   const js = await readFile(new URL('../public/menu.js', import.meta.url), 'utf8');
-  assert.match(css, /max-height:calc\(100dvh - 158px\)/);
+  assert.match(css, /max-height:calc\(100dvh - 184px\)/);
   assert.match(css, /overflow-y:auto/);
   assert.match(css, /@media\(max-width:1024px\) and \(prefers-reduced-motion:no-preference\)/);
   assert.match(css, /a:focus-visible,button:focus-visible/);
