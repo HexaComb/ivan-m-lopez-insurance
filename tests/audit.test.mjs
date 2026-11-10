@@ -19,18 +19,22 @@ for (const lang of ['en', 'es']) {
   assert.ok(text.includes(disclosure));
   assert.ok(text.includes(independence));
  });
- test(`${lang}: navigation has four native visible links and an independent language switch`,()=>{
+ test(`${lang}: navigation has four native links and a language switch in the disclosure panel`,()=>{
   const header=page(lang).match(/<header[\s\S]*?<\/header>/)[0];
   assert.equal((header.match(/class="section-link"/g)||[]).length,4);
   for(const label of copy[lang].nav)assert.ok(header.includes(`>${label}</a>`));
   assert.ok(header.includes('</nav><a class="lang"'));
-  assert.doesNotMatch(header, /hidden|aria-hidden|tabindex="-1"|<button|<details/);
+  assert.ok(header.includes('aria-controls="site-menu"'));
+  assert.ok(header.includes('data-menu-toggle'));
+  assert.doesNotMatch(header, /id="site-menu"[^>]*hidden/);
+  assert.doesNotMatch(header, /role="menu"|role="dialog"/);
  });
 }
-test('mobile navigation cannot disappear; logo preserves dimensions and original PNG bytes',async()=>{
+test('progressive mobile navigation and original logo dimensions are retained',async()=>{
  const css=await readFile(new URL('../public/styles.css',import.meta.url),'utf8');
  assert.doesNotMatch(css,/\.nav \.section-link\{display:none/);
- assert.ok(css.includes('.header>.nav{grid-column:1/-1;grid-row:2'));
+ assert.ok(css.includes('.menu-ready>.menu-panel'));
+ assert.ok(css.includes('.menu-panel .nav{display:grid;grid-template-columns:1fr 1fr;'));
  assert.ok(css.includes('.agency-logo{width:250px;max-width:100%;height:auto;'));
  const png=await readFile(new URL('../public/assets/van-berg-insurance.png',import.meta.url));
  assert.equal(png.readUInt32BE(16),701);

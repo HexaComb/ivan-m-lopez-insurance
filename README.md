@@ -52,7 +52,7 @@ Printed conversation notes include the exact supplied English Medicare and indep
 
 The preview includes the original 701×201 Van Berg Insurance Services logo, the secondary front-office line (925) 634-5702, and the supplied LinkedIn and X profiles. Ivan’s primary call/text number remains (925) 684-6712. The About section lists the supplied additional licensing states: Arizona, Hawaii, Nevada, Utah, North Carolina, Texas, and Washington; no additional license numbers or plan-availability claims are inferred.
 
-Mobile navigation uses an always-visible row of the four section links, with the language switch in the first row. There is no hidden menu, toggle state, modal, or focus trap. It works without JavaScript and at narrow widths wraps into two columns. Domain selection remains pending; no domain registration or new production launch is included.
+Mobile navigation is now a compact, labeled Menu button with a softly opening panel. The four section links, language switch, and primary call link remain available in the panel. Desktop navigation stays inline. Without JavaScript, all section and language links remain visible. Domain selection remains pending; no domain registration or new production launch is included.
 
 ## Hero stock video
 
@@ -75,3 +75,11 @@ The current preview supersedes the prior cinematic hero: there is no video, tree
 A clearly marked, disabled callback/appointment prototype shows the requested name, phone, optional email, Medicare/Part A/Part B choices, and consent. It contains no form element, action, submit control, enabled input, data-collection code, or availability slots. Exact supplied English consent appears on both pages, with a Spanish translation on the Spanish page. Calling remains functional. Do not activate fields until the receiving destination, privacy/retention requirements, availability source, and consent handling are approved and actual delivery is tested. No medical information is collected by this preview.
 
 The brief medical-themed coverage illustration and accessible focus controls remain; reduced-motion and no-JavaScript fallbacks are unchanged. Browser QA should check both languages at mobile sizes and zoom, especially the longer Spanish navigation label. No client email or production update is part of this revision.
+
+## Mobile menu refinement (current preview)
+
+`public/menu.js` progressively enhances the header at 1024px and below. A labeled Menu/Close (Menú/Cerrar) button controls a white navigation panel with generous link targets, the language switch, and Ivan’s primary phone link. Opening has a 240ms fade/10px slide, closing takes 160ms, and the two-line icon becomes a close mark. No decorative numbering or continuous animation is added.
+
+This is a disclosure, not a modal: it keeps normal Tab order, does not lock scrolling, and closes on Escape, outside pointer interaction, a link selection, or focus leaving the header. Closed and closing links are inert and removed from the accessibility tree. Escape returns focus to the button; section selections move focus to their destination. Resizing to desktop removes mobile hidden/inert state. Repeated toggles and changing reduced-motion preferences cancel in-flight animation safely. Reduced-motion users get immediate state changes and no icon transition. No Web Animations support leaves a functional instant menu. The no-JavaScript fallback retains all links.
+
+The client’s static hero, 20px body type, free-service/cost clarification, disabled appointment prototype, disclosures, and existing guide remain unchanged. This requested menu motion is limited to opening and closing. This revision is preview-only and does not merge or change production.
