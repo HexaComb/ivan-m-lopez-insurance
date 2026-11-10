@@ -99,3 +99,7 @@ The hero consultation button goes to the disabled callback/appointment preview. 
 Yami’s 11 supplied FAQ answers replace the question-selection and print interface. Native details/summary dropdowns work without JavaScript. The appointment FAQ is deliberately adapted to call/text only until the online service is connected and tested. English source content and Spanish translations live in scripts/client-feedback.mjs. Spanish translation and insurance/compliance review remain required before launch. The supplied green logo is unmodified; black/white alternatives have not yet been received.
 
 No production merge, domain purchase, client outreach, live calendar, or enabled data collection is included. npm run check covers the client requirements plus existing navigation, progressive enhancement, accessibility, and disclosure tests. Historical guide/video modules remain unused by the rendered pages.
+
+## Restrained visual revision
+
+The latest visual revision restores the earlier white editorial hero and original portrait proportions. It supersedes the large green text panel, surrounding frame, and portrait offset shadow described above. Brand green is limited to a thin header rule and the existing service-promise accent. Original typography, spacing, background surfaces, and section character are retained. The requested consultation links, first-person copy, supplied FAQs, service descriptions, Spanish pages, and honest disabled request prototype remain intact. This is a feature preview only.

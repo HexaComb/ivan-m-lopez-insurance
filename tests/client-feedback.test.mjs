@@ -43,9 +43,13 @@ test('requested English labels and first-person introduction are exact',()=>{
  for(const label of ['Request a Free Consultation','Call or Text Us at (925) 684-6712','What Can We Help With?','Medicare Advantage','Medicare Supplement with Prescription Drug Plan','Employer & Group Health Plans','Our team is here to help','Give us a call','I’m a Licensed Independent Insurance Broker'])assert.ok(html.includes(label),label);
  assert.doesNotMatch(copy.en.lead,/Ivan M\. Lopez helps/);
 });
-test('logo-green hero, readable dark text and borders are specified',async()=>{
+test('restrained revision preserves the white hero and original portrait treatment',async()=>{
  const css=await readFile(new URL('../public/styles.css',import.meta.url),'utf8');
- assert.ok(css.includes('--brand-green:#8dbb4a'));
- assert.ok(css.includes('border:2px solid var(--brand-green)'));
- assert.ok(css.includes('background:var(--brand-green);padding:38px;border-radius:4px;color:var(--ink)'));
+ const revision=css.slice(css.indexOf('/* Restrained client revision:'));
+ assert.ok(revision.includes('--brand-green:#8dbb4a'));
+ assert.ok(revision.includes('.site-header-shell{border-bottom:3px solid var(--brand-green)}'));
+ assert.ok(revision.includes('.senior-hero{background:#fff;border:0;box-shadow:none}'));
+ assert.ok(revision.includes('.senior-hero .hero-copy{background:transparent;padding:0;border:0;box-shadow:none}'));
+ assert.ok(revision.includes('.advisor-portrait img{box-shadow:none}'));
+ assert.doesNotMatch(revision,/background:var\(--brand-green\)/);
 });
