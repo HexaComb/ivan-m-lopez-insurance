@@ -83,3 +83,9 @@ The brief medical-themed coverage illustration and accessible focus controls rem
 This is a disclosure, not a modal: it keeps normal Tab order, does not lock scrolling, and closes on Escape, outside pointer interaction, a link selection, or focus leaving the header. Closed and closing links are inert and removed from the accessibility tree. Escape returns focus to the button; section selections move focus to their destination. Resizing to desktop removes mobile hidden/inert state. Repeated toggles and changing reduced-motion preferences cancel in-flight animation safely. Reduced-motion users get immediate state changes and no icon transition. No Web Animations support leaves a functional instant menu. The no-JavaScript fallback retains all links.
 
 The client’s static hero, 20px body type, free-service/cost clarification, disabled appointment prototype, disclosures, and existing guide remain unchanged. This requested menu motion is limited to opening and closing. This revision is preview-only and does not merge or change production.
+
+## Always-available language access
+
+At 1024px and below, a static bottom-right language shortcut reads “Ayuda En Español” on the English page and opens the existing Spanish page. The Spanish page provides the equivalent “English” return link. It uses native links without a JavaScript dependency, new contact flow, tracking, or personal-data collection. Safe-area offsets, a 54px minimum target, bottom scroll clearance, and extra footer space keep it usable on mobile. While the mobile menu is open, its own language link remains available and the floating duplicate is hidden to avoid overlap.
+
+Above 1024px, the existing language link remains in the full desktop navbar, and the full-width header stays on screen while scrolling. Desktop anchor offsets prevent the sticky header from covering destination headings. The floating shortcut is hidden on desktop and in print.

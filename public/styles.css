@@ -190,3 +190,21 @@ body,.soft,.coverage-moment,.guide-index,.notes-sheet{background:#fff}
   .menu-icon>span{transition:transform .22s cubic-bezier(.2,.8,.2,1)}
   .menu-toggle{transition:background-color .18s,color .18s}
 }
+
+/* Keep language access easy to find without adding a moving prompt. */
+.floating-language{display:none}
+@media(min-width:1025px){
+  .site-header-shell{position:sticky;top:0;z-index:30;background:#fff;border-bottom:1px solid var(--line)}
+  .site-header-shell .header{border-bottom:0}
+  html{scroll-padding-top:140px}
+}
+@media(max-width:1024px){
+  html{scroll-padding-bottom:calc(100px + env(safe-area-inset-bottom,0px))}
+  body{padding-bottom:calc(86px + env(safe-area-inset-bottom,0px))}
+  .floating-language{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:max(16px,env(safe-area-inset-bottom,0px));z-index:20;display:inline-flex;align-items:center;justify-content:center;min-height:54px;max-width:calc(100% - 32px);padding:14px 20px;border:1px solid var(--ink);border-radius:30px;background:var(--ink);color:white;font-size:.9rem;font-weight:700;line-height:1.4;text-decoration:none;box-shadow:0 5px 18px #173d3229}
+  .floating-language:hover{background:var(--green);text-decoration:underline}
+  .floating-language:focus-visible{outline:3px solid #a16223;outline-offset:4px}
+  .site-header-shell:has(.menu-toggle[aria-expanded=true])+.floating-language{display:none}
+  main :is(a,button,summary,input,select),.footer a{scroll-margin-bottom:calc(100px + env(safe-area-inset-bottom,0px))}
+}
+@media print{.site-header-shell,.floating-language{display:none!important}body{padding-bottom:0}}
