@@ -214,7 +214,7 @@ body,.soft,.coverage-moment,.guide-index,.notes-sheet{background:#fff}
 .senior-hero{grid-template-columns:minmax(0,1.35fr) minmax(0,.65fr);align-items:center;gap:38px;border:2px solid var(--brand-green);padding:22px;margin-top:28px;margin-bottom:36px;border-radius:8px}
 .senior-hero .hero-copy{max-width:none;background:var(--brand-green);padding:38px;border-radius:4px;color:var(--ink)}
 .senior-hero .eyebrow,.senior-hero .hero-lead,.senior-hero .small,.senior-hero .service-promise p{color:var(--ink)}
-.senior-hero .eyebrow{font-size:.95rem}
+.senior-hero .eyebrow,.everyday-intro .eyebrow{font-size:.95rem}
 .senior-hero h1{font-size:clamp(2.65rem,4.1vw,3.5rem);line-height:1.1}
 .senior-hero .service-promise{border-left-color:var(--ink);margin:25px 0;padding-left:18px}
 .senior-hero .service-promise h2{font-size:1.15rem}
