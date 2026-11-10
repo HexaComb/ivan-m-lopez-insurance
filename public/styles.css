@@ -215,6 +215,7 @@ body,.soft,.coverage-moment,.guide-index,.notes-sheet{background:#fff}
 .senior-hero{background:#fff;border:0;box-shadow:none}
 .senior-hero .hero-copy{background:transparent;padding:0;border:0;box-shadow:none}
 .advisor-portrait img{box-shadow:none}
+.senior-hero .advisor-portrait{align-self:start;margin-top:35px}
 .hero-actions{align-items:flex-start;flex-direction:column;gap:12px;margin-top:28px}
 .hero-actions .button{line-height:1.45;max-width:100%;text-align:left;justify-content:space-between}
 .hero-contact-box{max-width:100%;display:flex;flex-direction:column;align-items:flex-start}
@@ -233,6 +234,6 @@ body,.soft,.coverage-moment,.guide-index,.notes-sheet{background:#fff}
 .topbar,.header .nav,.menu-panel>.lang,.eyebrow,.small,.disclosures,.copyright,.trust .wrap,.advisor-portrait figcaption,.service-promise p,.coverage-purpose,.additional-licenses h3,.additional-licenses p,.contact-details h3,.front-office a,.footer-links,.advisor-brand small,.prototype-consent label,.menu-contact p,.menu-call,.floating-language{font-size:.95rem}
 .senior-hero .eyebrow,.everyday-intro .eyebrow{font-size:.95rem}
 @media(max-width:1024px){.menu-ready .menu-panel>.lang,.menu-ready .menu-toggle,.menu-contact p,.menu-call{font-size:.95rem}.coverage-focus-controls{grid-template-columns:1fr}.coverage-focus-controls button{min-height:60px}}
-@media(max-width:800px){#questions.split{grid-template-columns:1fr;gap:25px}.question-mark{display:none}}
+@media(max-width:800px){.senior-hero .advisor-portrait{margin-top:0}#questions.split{grid-template-columns:1fr;gap:25px}.question-mark{display:none}}
 @media(max-width:600px){.hero-actions,.hero-contact-box{width:100%}.hero-actions .button{width:100%;padding:16px 18px;font-size:1rem;text-align:center;justify-content:center}.hero-sms{align-self:center}.coverage-detail-pages h3{font-size:1.5rem}.everyday-intro h2{font-size:2.3rem}.trust .wrap,.footer-links,.brand small{font-size:.95rem}.coverage-focus-controls button{font-size:1rem}}
 @media print{#questions{display:block!important}.faq details{break-inside:avoid}.faq details>p{display:block!important}.faq{font-size:12pt}.question-mark{display:none}}
