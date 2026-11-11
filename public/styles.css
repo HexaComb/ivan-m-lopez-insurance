@@ -237,3 +237,19 @@ body,.soft,.coverage-moment,.guide-index,.notes-sheet{background:#fff}
 @media(max-width:800px){.senior-hero .advisor-portrait{margin-top:0}#questions.split{grid-template-columns:1fr;gap:25px}.question-mark{display:none}}
 @media(max-width:600px){.hero-actions,.hero-contact-box{width:100%}.hero-actions .button{width:100%;padding:16px 18px;font-size:1rem;text-align:center;justify-content:center}.hero-sms{align-self:center}.coverage-detail-pages h3{font-size:1.5rem}.everyday-intro h2{font-size:2.3rem}.trust .wrap,.footer-links,.brand small{font-size:.95rem}.coverage-focus-controls button{font-size:1rem}}
 @media print{#questions{display:block!important}.faq details{break-inside:avoid}.faq details>p{display:block!important}.faq{font-size:12pt}.question-mark{display:none}}
+/* Same-page request previews retain the approved visual language. */
+.request-mode-controls{display:flex;gap:14px;margin:30px 0;flex-wrap:wrap}
+.request-mode-controls button{flex:1 1 280px;min-height:58px;padding:16px 20px;border:1px solid var(--green);border-radius:4px;background:white;color:var(--ink);font-size:1rem;line-height:1.5;text-align:left}
+.request-mode-controls button:hover{background:var(--sage)}
+.request-mode-controls button[aria-pressed=true]{background:var(--green);color:white;text-decoration:underline;text-underline-offset:5px}
+[data-request-panel]>h3{font-family:Georgia,serif;font-size:1.65rem;font-weight:400;line-height:1.35;margin-top:30px}
+@media(max-width:600px){.request-mode-controls{gap:12px}.request-mode-controls button{flex-basis:100%;padding:15px 18px}}
+.podcast-section{border-bottom:1px solid var(--line)}
+.podcast-section h2{max-width:none;font-size:clamp(2rem,3.5vw,3rem);line-height:1.2;margin-bottom:30px}
+.podcast-player{display:block;width:100%;min-width:0;height:58px;border-radius:4px;background:#f1f3ef}
+.podcast-player:focus-visible{outline:3px solid #a16223;outline-offset:5px}
+.podcast-support{display:flex;gap:30px;justify-content:space-between;align-items:flex-start;margin-top:22px}
+.podcast-support p{max-width:750px;margin:0;font-size:.9rem;color:var(--muted)}
+.podcast-support a{flex-shrink:0;font-size:.9rem;line-height:1.6}
+@media(max-width:600px){.podcast-support{display:block}.podcast-support a{display:inline-block;margin-top:18px}.podcast-section h2{font-size:2rem}}
+@media print{.podcast-section{display:none!important}}

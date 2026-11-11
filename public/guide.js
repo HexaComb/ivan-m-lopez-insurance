@@ -1,3 +1,4 @@
+import { initializeRequestModes } from './request-modes.js';
 import { initializeMenu } from './menu.js';
 import { initializeCoverageMotion } from './coverage-motion.js';
 /** Page-only state. No network calls, storage, tracking, or personal-data entry. */
@@ -71,3 +72,5 @@ if (typeof document !== 'undefined') document.querySelectorAll('[data-guide]').f
 if (typeof document !== 'undefined') initializeCoverageMotion(document);
 
 if (typeof document !== 'undefined') document.querySelectorAll('[data-site-header]').forEach(initializeMenu);
+
+if (typeof document !== 'undefined') document.querySelectorAll('[data-request-modes]').forEach(initializeRequestModes);

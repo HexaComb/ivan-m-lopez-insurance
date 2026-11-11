@@ -16,9 +16,9 @@ for(const lang of ['en','es']){
   const html=page(lang);
   const section=html.match(/<section class="wrap request-prototype[\s\S]*?<\/section>/)[0];
   assert.ok(section.includes('<fieldset disabled'));
-  assert.equal((section.match(/<input\b/g)||[]).length,5);
+  assert.equal((section.match(/<input\b/g)||[]).length,12);
   assert.equal((section.match(/<select\b/g)||[]).length,3);
-  for(const [tag] of section.matchAll(/<(?:input|select|button)\b[^>]*>/g))assert.match(tag,/\bdisabled\b/);
+  for(const [fieldset] of section.matchAll(/<fieldset[\s\S]*?<\/fieldset>/g))for(const [tag] of fieldset.matchAll(/<(?:input|select|button)\b[^>]*>/g))assert.match(tag,/\bdisabled\b/);
   assert.doesNotMatch(section,/<form|type="submit"|name=|action=|data-submit/);
   assert.ok(section.includes(consent));
   assert.ok(section.includes(lang==='en'?'No online availability is shown.':'No se muestra disponibilidad en línea.'));
