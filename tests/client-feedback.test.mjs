@@ -51,5 +51,17 @@ test('restrained revision preserves the white hero and original portrait treatme
  assert.ok(revision.includes('.senior-hero{background:#fff;border:0;box-shadow:none}'));
  assert.ok(revision.includes('.senior-hero .hero-copy{background:transparent;padding:0;border:0;box-shadow:none}'));
  assert.ok(revision.includes('.advisor-portrait img{box-shadow:none}'));
- assert.doesNotMatch(revision,/background:var\(--brand-green\)/);
+ assert.ok(revision.includes('.senior-hero h1{background:var(--brand-green);color:var(--ink);border:2px solid var(--ink);'));
+ assert.ok(revision.includes('padding:clamp(16px,2.2vw,28px)'));
+ assert.ok(revision.includes('@media print{.senior-hero h1{background:white;color:black;border-color:black}}'));
+});
+
+// WCAG relative luminance: the sampled logo green needs dark, not white, text.
+test('logo-green heading text and border exceed normal-text AA contrast',async()=>{
+ const css=await readFile(new URL('../public/styles.css',import.meta.url),'utf8');
+ const color=name=>css.match(new RegExp(`--${name}:#([0-9a-f]{6})`))[1];
+ const luminance=hex=>hex.match(/../g).map(v=>parseInt(v,16)/255).map(v=>v<=.04045?v/12.92:((v+.055)/1.055)**2.4).reduce((sum,v,i)=>sum+v*[.2126,.7152,.0722][i],0);
+ assert.equal(color('brand-green'),'8dbb4a');
+ const contrast=(luminance(color('brand-green'))+.05)/(luminance(color('ink'))+.05);
+ assert.ok(contrast>=4.5,`Heading and border contrast: ${contrast.toFixed(2)}:1`);
 });

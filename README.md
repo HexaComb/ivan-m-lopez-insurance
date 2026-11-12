@@ -121,3 +121,7 @@ The mobile language shortcut now occupies a full-width white bar in normal flow 
 ## Native podcast seeking correction
 
 Deployed-preview QA found `seekable=[0,0]` despite buffered audio. HTTP Range probes to Pages returned the entire asset with 200, while the identical MP3 from GitHub returned correct 206 byte ranges. A narrowly routed Pages Function now serves real 206/Content-Range responses for only `/assets/ivan-marinhealth-podcast.mp3`. It reads the unchanged static MP3 through the Pages ASSETS binding, supports full/HEAD/suffix/open-ended requests, validates ranges, and respects If-Range. No other URL invokes a function; no form backend or collection is introduced. The fixed 9.7 MB file is buffered to create byte slices. Confirm deployed 206 responses and native browser seeking after publication; unit tests alone do not verify Cloudflare routing.
+
+## Logo-green heading refinement
+
+The hero heading now uses the original supplied logo's solid green, sampled from its pixels: RGB 141, 187, 74 (#8dbb4a). A dark #173d32 border and matching heading text provide readable contrast; white text is deliberately avoided. Only the heading has a green background, not the entire text column or page. The white page, original portrait, section order, senior-friendly type sizes, navigation, request prototypes, podcast and byte-range handling remain unchanged. Existing header and service-promise green accents complement the heading. The print treatment remains black on white. This supersedes the heading's all-white treatment in the restrained revision above.

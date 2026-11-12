@@ -214,6 +214,9 @@ body,.soft,.coverage-moment,.guide-index,.notes-sheet{background:#fff}
 .site-header-shell{border-bottom:3px solid var(--brand-green)}
 .senior-hero{background:#fff;border:0;box-shadow:none}
 .senior-hero .hero-copy{background:transparent;padding:0;border:0;box-shadow:none}
+/* Original logo pigment, paired with dark ink rather than low-contrast white. */
+.senior-hero h1{background:var(--brand-green);color:var(--ink);border:2px solid var(--ink);padding:clamp(16px,2.2vw,28px);border-radius:4px;overflow-wrap:break-word}
+@media print{.senior-hero h1{background:white;color:black;border-color:black}}
 .advisor-portrait img{box-shadow:none}
 .senior-hero .advisor-portrait{align-self:start;margin-top:35px}
 .hero-actions{align-items:flex-start;flex-direction:column;gap:12px;margin-top:28px}
