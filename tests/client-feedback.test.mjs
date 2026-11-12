@@ -65,3 +65,15 @@ test('logo-green heading text and border exceed normal-text AA contrast',async()
  const contrast=(luminance(color('brand-green'))+.05)/(luminance(color('ink'))+.05);
  assert.ok(contrast>=4.5,`Heading and border contrast: ${contrast.toFixed(2)}:1`);
 });
+
+test('brand green connects section bands, selected choices and primary actions without recoloring the page',async()=>{
+ const css=await readFile(new URL('../public/styles.css',import.meta.url),'utf8');
+ const brand=css.slice(css.indexOf('/* A coherent logo-green path'));
+ assert.ok(brand.includes('.trust{background:var(--brand-green);color:var(--ink);border-block:0;padding-block:28px}'));
+ assert.ok(brand.includes('.hero-actions>.button:not(.secondary),.contact .button:not(.secondary){background:var(--brand-green);color:var(--ink);border-color:var(--ink)}'));
+ assert.ok(brand.includes('.coverage-focus-controls button[aria-pressed=true],.request-mode-controls button[aria-pressed=true]{background:var(--brand-green);color:var(--ink);border-color:var(--ink);font-weight:700}'));
+ assert.ok(brand.includes('.contact{border-top:4px solid var(--brand-green)}'));
+ assert.ok(brand.includes('.podcast-section h2{border-left:4px solid var(--brand-green);padding-left:22px}'));
+ assert.doesNotMatch(brand,/body\s*\{|:root|linear-gradient|font-size|position:|animation:/);
+ assert.ok(css.includes('body,.soft,.coverage-moment,.guide-index,.notes-sheet{background:#fff}'));
+});

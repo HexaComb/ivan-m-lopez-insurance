@@ -256,3 +256,13 @@ body,.soft,.coverage-moment,.guide-index,.notes-sheet{background:#fff}
 .podcast-support a{flex-shrink:0;font-size:.9rem;line-height:1.6}
 @media(max-width:600px){.podcast-support{display:block}.podcast-support a{display:inline-block;margin-top:18px}.podcast-section h2{font-size:2rem}}
 @media print{.podcast-section{display:none!important}}
+
+/* A coherent logo-green path from the service promise to the contact action. */
+.trust{background:var(--brand-green);color:var(--ink);border-block:0;padding-block:28px}
+.hero-actions>.button:not(.secondary),.contact .button:not(.secondary){background:var(--brand-green);color:var(--ink);border-color:var(--ink)}
+.hero-actions>.button:not(.secondary):hover,.contact .button:not(.secondary):hover{background:var(--ink);color:white;outline:2px solid var(--brand-green);outline-offset:2px}
+.coverage-focus-controls button[aria-pressed=true],.request-mode-controls button[aria-pressed=true]{background:var(--brand-green);color:var(--ink);border-color:var(--ink);font-weight:700}
+.coverage-focus-controls button[aria-pressed=true]:hover,.request-mode-controls button[aria-pressed=true]:hover{background:var(--brand-green);text-decoration-thickness:2px}
+.contact{border-top:4px solid var(--brand-green)}
+.podcast-section{border-top:1px solid var(--line)}
+.podcast-section h2{border-left:4px solid var(--brand-green);padding-left:22px}

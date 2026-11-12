@@ -125,3 +125,7 @@ Deployed-preview QA found `seekable=[0,0]` despite buffered audio. HTTP Range pr
 ## Logo-green heading refinement
 
 The hero heading now uses the original supplied logo's solid green, sampled from its pixels: RGB 141, 187, 74 (#8dbb4a). A dark #173d32 border and matching heading text provide readable contrast; white text is deliberately avoided. Only the heading has a green background, not the entire text column or page. The white page, original portrait, section order, senior-friendly type sizes, navigation, request prototypes, podcast and byte-range handling remain unchanged. Existing header and service-promise green accents complement the heading. The print treatment remains black on white. This supersedes the heading's all-white treatment in the restrained revision above.
+
+## Stronger brand-green continuity
+
+The same sampled #8dbb4a now fills the full-width trust/service strip, primary hero and contact actions, and selected service/request choices. Dark #173d32 text and borders retain 5.34:1 contrast; selection still has an underline and bold label rather than relying on color alone. The trust strip has generous vertical breathing room and no surrounding outline. A slim green top rule accents the dark contact panel; a matching vertical line beside the podcast heading creates a quieter editorial detail instead of another colored block. Hover and keyboard-focus feedback remain visible. White page surfaces, secondary actions, layout, disabled request fields, all wording and audio behavior are unchanged.
