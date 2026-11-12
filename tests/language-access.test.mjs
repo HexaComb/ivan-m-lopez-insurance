@@ -21,13 +21,14 @@ for (const lang of ['en', 'es']) {
   });
 }
 
-test('mobile shortcut is fixed, safe-area aware, readable and kept clear of the open menu', async () => {
+test('mobile language bar reserves normal flow space and leaves bottom controls unobstructed', async () => {
   const css = await readFile(new URL('../public/styles.css', import.meta.url), 'utf8');
   assert.ok(css.includes('.floating-language{display:none}'));
-  assert.ok(css.includes('.floating-language{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:max(16px,env(safe-area-inset-bottom,0px))'));
-  assert.ok(css.includes('min-height:54px'));
-  assert.ok(css.includes('scroll-padding-bottom:calc(100px + env(safe-area-inset-bottom,0px))'));
-  assert.ok(css.includes('padding-bottom:calc(86px + env(safe-area-inset-bottom,0px))'));
+  assert.ok(css.includes('.floating-language{position:sticky;top:0'));
+  assert.doesNotMatch(css, /\.floating-language\{position:fixed/);
+  assert.ok(css.includes('min-height:58px'));
+  assert.ok(css.includes('scroll-padding-top:90px;scroll-padding-bottom:24px'));
+  assert.ok(css.includes('scroll-margin-top:90px;scroll-margin-bottom:24px'));
   assert.ok(css.includes('.site-header-shell:has(.menu-toggle[aria-expanded=true])+.floating-language{display:none}'));
   assert.ok(css.includes('.floating-language:focus-visible'));
 });
