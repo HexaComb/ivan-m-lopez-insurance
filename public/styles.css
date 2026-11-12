@@ -215,7 +215,7 @@ body,.soft,.coverage-moment,.guide-index,.notes-sheet{background:#fff}
 .senior-hero{background:#fff;border:0;box-shadow:none}
 .senior-hero .hero-copy{background:transparent;padding:0;border:0;box-shadow:none}
 /* Original logo pigment, paired with dark ink rather than low-contrast white. */
-.senior-hero h1{background:var(--brand-green);color:var(--ink);border:2px solid var(--ink);padding:clamp(16px,2.2vw,28px);border-radius:4px;overflow-wrap:break-word}
+.senior-hero h1{background:var(--brand-green);color:var(--ink);border:1px solid var(--green);padding:calc(clamp(16px,2.2vw,28px) + 1px);border-radius:4px;overflow-wrap:break-word}
 @media print{.senior-hero h1{background:white;color:black;border-color:black}}
 .advisor-portrait img{box-shadow:none}
 .senior-hero .advisor-portrait{align-self:start;margin-top:35px}
@@ -261,8 +261,8 @@ body,.soft,.coverage-moment,.guide-index,.notes-sheet{background:#fff}
 .trust{background:var(--brand-green);color:var(--ink);border-block:0;padding-block:28px}
 .hero-actions>.button:not(.secondary),.contact .button:not(.secondary){background:var(--brand-green);color:var(--ink);border-color:var(--ink)}
 .hero-actions>.button:not(.secondary):hover,.contact .button:not(.secondary):hover{background:var(--ink);color:white;outline:2px solid var(--brand-green);outline-offset:2px}
-.coverage-focus-controls button[aria-pressed=true],.request-mode-controls button[aria-pressed=true]{background:var(--brand-green);color:var(--ink);border-color:var(--ink);font-weight:700}
-.coverage-focus-controls button[aria-pressed=true]:hover,.request-mode-controls button[aria-pressed=true]:hover{background:var(--brand-green);text-decoration-thickness:2px}
+.coverage-focus-controls button[aria-pressed=true],.request-mode-controls button[aria-pressed=true]{background:var(--brand-green);color:var(--ink);border-color:var(--ink);font-weight:400;text-decoration:none}
+.coverage-focus-controls button[aria-pressed=true]:hover,.request-mode-controls button[aria-pressed=true]:hover{background:var(--brand-green);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:5px}
 .contact{border-top:4px solid var(--brand-green)}
 .podcast-section{border-top:1px solid var(--line)}
 .podcast-section h2{border-left:4px solid var(--brand-green);padding-left:22px}

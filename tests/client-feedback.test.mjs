@@ -51,8 +51,8 @@ test('restrained revision preserves the white hero and original portrait treatme
  assert.ok(revision.includes('.senior-hero{background:#fff;border:0;box-shadow:none}'));
  assert.ok(revision.includes('.senior-hero .hero-copy{background:transparent;padding:0;border:0;box-shadow:none}'));
  assert.ok(revision.includes('.advisor-portrait img{box-shadow:none}'));
- assert.ok(revision.includes('.senior-hero h1{background:var(--brand-green);color:var(--ink);border:2px solid var(--ink);'));
- assert.ok(revision.includes('padding:clamp(16px,2.2vw,28px)'));
+ assert.ok(revision.includes('.senior-hero h1{background:var(--brand-green);color:var(--ink);border:1px solid var(--green);'));
+ assert.ok(revision.includes('padding:calc(clamp(16px,2.2vw,28px) + 1px)'));
  assert.ok(revision.includes('@media print{.senior-hero h1{background:white;color:black;border-color:black}}'));
 });
 
@@ -71,7 +71,7 @@ test('brand green connects section bands, selected choices and primary actions w
  const brand=css.slice(css.indexOf('/* A coherent logo-green path'));
  assert.ok(brand.includes('.trust{background:var(--brand-green);color:var(--ink);border-block:0;padding-block:28px}'));
  assert.ok(brand.includes('.hero-actions>.button:not(.secondary),.contact .button:not(.secondary){background:var(--brand-green);color:var(--ink);border-color:var(--ink)}'));
- assert.ok(brand.includes('.coverage-focus-controls button[aria-pressed=true],.request-mode-controls button[aria-pressed=true]{background:var(--brand-green);color:var(--ink);border-color:var(--ink);font-weight:700}'));
+ assert.ok(brand.includes('.coverage-focus-controls button[aria-pressed=true],.request-mode-controls button[aria-pressed=true]{background:var(--brand-green);color:var(--ink);border-color:var(--ink);font-weight:400;text-decoration:none}'));
  assert.ok(brand.includes('.contact{border-top:4px solid var(--brand-green)}'));
  assert.ok(brand.includes('.podcast-section h2{border-left:4px solid var(--brand-green);padding-left:22px}'));
  assert.doesNotMatch(brand,/body\s*\{|:root|linear-gradient|font-size|position:|animation:/);
