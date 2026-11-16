@@ -13,7 +13,7 @@ for(const lang of ['en','es']){
   assert.ok(section.includes('href="/assets/ivan-marinhealth-podcast.mp3"'));
   assert.doesNotMatch(section,/autoplay|<iframe|<script/);
   assert.ok(html.indexOf('id="contact"')<html.indexOf('id="podcast"'));
-  assert.match(html, /<\/audio>[\s\S]*?<\/section>\s*<section class="wrap section split" id="questions">/);
+  assert.match(html, /<\/audio>[\s\S]*?<\/section>\s*<section class="wrap section faq-section" id="questions" aria-labelledby="faq-title">/);
   assert.ok(section.includes(lang==='en'?'This is a recorded interview.':'Esta es una entrevista grabada.'));
  });
 }

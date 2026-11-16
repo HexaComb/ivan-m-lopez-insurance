@@ -40,20 +40,16 @@ for(const lang of ['en','es']) {
 }
 test('requested English labels and first-person introduction are exact',()=>{
  const html=page('en');
- for(const label of ['Request a Free Consultation','Call or Text Us at (925) 684-6712','What Can We Help With?','Medicare Advantage','Medicare Supplement with Prescription Drug Plan','Employer & Group Health Plans','Our team is here to help','Give us a call','I’m a Licensed Independent Insurance Broker'])assert.ok(html.includes(label),label);
+ for(const label of ['Request a Free Consultation','Call or Text Us at (925) 684-6712','How Can We Help?','Medicare Advantage','Medicare Supplement with Prescription Drug Plan','Employer & Group Health Plans','Let’s find coverage that works for you.','Give us a call','I’m a Licensed Independent Insurance Broker'])assert.ok(html.includes(label),label);
  assert.doesNotMatch(copy.en.lead,/Ivan M\. Lopez helps/);
 });
-test('restrained revision preserves the white hero and original portrait treatment',async()=>{
+test('PDF revision removes the green headline box and retains original portrait',async()=>{
  const css=await readFile(new URL('../public/styles.css',import.meta.url),'utf8');
- const revision=css.slice(css.indexOf('/* Restrained client revision:'));
- assert.ok(revision.includes('--brand-green:#8dbb4a'));
- assert.ok(revision.includes('.site-header-shell{border-bottom:3px solid var(--brand-green)}'));
- assert.ok(revision.includes('.senior-hero{background:#fff;border:0;box-shadow:none}'));
- assert.ok(revision.includes('.senior-hero .hero-copy{background:transparent;padding:0;border:0;box-shadow:none}'));
- assert.ok(revision.includes('.advisor-portrait img{box-shadow:none}'));
- assert.ok(revision.includes('.senior-hero h1{background:var(--brand-green);color:var(--ink);border:1px solid var(--green);'));
- assert.ok(revision.includes('padding:calc(clamp(16px,2.2vw,28px) + 1px)'));
- assert.ok(revision.includes('@media print{.senior-hero h1{background:white;color:black;border-color:black}}'));
+ const revision=css.slice(css.indexOf("/* Yami's annotated PDF:"));
+ assert.ok(revision.includes('.senior-hero h1{background:none;border:0;padding:0;border-radius:0}'));
+ assert.ok(revision.includes('background:var(--hero-beige)'));
+ assert.ok(revision.includes('background:var(--soft-brand);color:var(--ink)'));
+ assert.doesNotMatch(revision,/gradient|counter-increment/);
 });
 
 // WCAG relative luminance: the sampled logo green needs dark, not white, text.
@@ -64,16 +60,4 @@ test('logo-green heading text and border exceed normal-text AA contrast',async()
  assert.equal(color('brand-green'),'8dbb4a');
  const contrast=(luminance(color('brand-green'))+.05)/(luminance(color('ink'))+.05);
  assert.ok(contrast>=4.5,`Heading and border contrast: ${contrast.toFixed(2)}:1`);
-});
-
-test('brand green connects section bands, selected choices and primary actions without recoloring the page',async()=>{
- const css=await readFile(new URL('../public/styles.css',import.meta.url),'utf8');
- const brand=css.slice(css.indexOf('/* A coherent logo-green path'));
- assert.ok(brand.includes('.trust{background:var(--brand-green);color:var(--ink);border-block:0;padding-block:28px}'));
- assert.ok(brand.includes('.hero-actions>.button:not(.secondary),.contact .button:not(.secondary){background:var(--brand-green);color:var(--ink);border-color:var(--ink)}'));
- assert.ok(brand.includes('.coverage-focus-controls button[aria-pressed=true],.request-mode-controls button[aria-pressed=true]{background:var(--brand-green);color:var(--ink);border-color:var(--ink);font-weight:400;text-decoration:none}'));
- assert.ok(brand.includes('.contact{border-top:4px solid var(--brand-green)}'));
- assert.ok(brand.includes('.podcast-section h2{border-left:4px solid var(--brand-green);padding-left:22px}'));
- assert.doesNotMatch(brand,/body\s*\{|:root|linear-gradient|font-size|position:|animation:/);
- assert.ok(css.includes('body,.soft,.coverage-moment,.guide-index,.notes-sheet{background:#fff}'));
 });

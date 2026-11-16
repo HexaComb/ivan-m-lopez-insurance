@@ -266,3 +266,31 @@ body,.soft,.coverage-moment,.guide-index,.notes-sheet{background:#fff}
 .contact{border-top:4px solid var(--brand-green)}
 .podcast-section{border-top:1px solid var(--line)}
 .podcast-section h2{border-left:4px solid var(--brand-green);padding-left:22px}
+
+/* Yami's annotated PDF: warm framing, soft green accents, quieter hierarchy. */
+:root{--soft-brand:#e2edcf;--hero-beige:#f5f1e8}
+.senior-hero{background:var(--hero-beige);border:1px solid #d8ddcb;border-radius:14px;padding:clamp(28px,4vw,58px);margin-block:34px 45px;gap:50px}
+.senior-hero h1{background:none;border:0;padding:0;border-radius:0}
+.senior-hero .advisor-portrait{margin-top:12px}
+.advisor-portrait img{border-radius:8px}
+.senior-hero .eyebrow{letter-spacing:.03em}
+.service-promise{border-left:3px solid var(--brand-green);padding-left:18px}
+.service-promise p{font-size:.9rem}
+.trust{background:var(--soft-brand);border-block:1px solid #c4d0b3}
+.hero-actions>.button:not(.secondary),.contact .button:not(.secondary){background:var(--soft-brand);color:var(--ink)}
+.coverage-focus-controls button[aria-pressed=true],.request-mode-controls button[aria-pressed=true],.coverage-focus-controls button[aria-pressed=true]:hover,.request-mode-controls button[aria-pressed=true]:hover{background:var(--soft-brand);color:var(--ink);border-color:var(--green)}
+.request-frame{border:1px solid #a9b79d;border-radius:6px;margin-top:38px;padding:0 28px 28px}
+.request-mode-controls{margin:-1px -29px 24px;gap:0;flex-wrap:nowrap}
+.request-mode-controls button{border-radius:6px 6px 0 0;flex:1 1 0;min-width:0;border-color:#a9b79d;background:#f5f5f0}
+.request-mode-controls button[aria-pressed=true]{border-bottom-color:var(--soft-brand);box-shadow:inset 0 3px 0 var(--green)}
+.request-prototype .request-frame fieldset{border:0;padding:0;margin:0;min-width:0}
+.request-frame:has([data-request-controls]:not([hidden])) .request-panel-heading{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.contact-email{margin-top:30px}.direct-contact{margin-top:28px}.direct-contact p{margin-bottom:0}
+.podcast-section{margin-top:70px;padding:clamp(28px,4vw,50px);border:1px solid #b8c7a7;border-top:4px solid var(--brand-green);border-radius:10px;background:#f6f8f1}
+.podcast-section h2{border:0;padding-left:0;font-size:clamp(1.8rem,3vw,2.8rem)}
+.faq-section{max-width:1060px}.faq-section>h2{text-align:center;font-size:clamp(2rem,3.8vw,3rem);margin-bottom:45px}.faq-section .faq{width:100%}.faq-section .faq summary{padding-block:24px}
+.footer-top{display:block}.footer-links{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;width:100%;margin-top:35px;padding-block:22px;border-block:1px solid var(--line);font-size:1.1rem}.footer-links a{display:inline-flex;align-items:center;min-height:48px}
+@media(max-width:800px){.senior-hero{gap:32px}.senior-hero .advisor-portrait{margin-top:0}}
+@media(max-width:600px){.senior-hero{padding:28px 22px;margin-block:24px 32px}.senior-hero h1{font-size:clamp(2.05rem,8.5vw,2.7rem)}.request-frame{padding:0 18px 22px}.request-mode-controls{margin-inline:-19px;flex-wrap:wrap}.request-mode-controls button{flex-basis:100%;border-radius:0}.request-mode-controls button:first-child{border-radius:6px 6px 0 0}.podcast-section{padding:28px 22px}.footer-links{justify-content:flex-start;gap:12px 28px}.footer-identity .advisor-brand small{line-height:1.6}.faq-section>h2{margin-bottom:28px}}
+@media print{.senior-hero,.podcast-section{background:white}.senior-hero{border:0}.request-frame{border-color:black}}

@@ -131,3 +131,21 @@ The hero heading now uses the original supplied logo's solid green, sampled from
 The same sampled #8dbb4a now fills the full-width trust/service strip, primary hero and contact actions, and selected service/request choices. Dark #173d32 text and borders retain 5.34:1 contrast; selected choices retain their native pressed-state announcement and contrasting border. Labels use a calmer regular weight, with an underline on hover rather than a permanent bold underline. The trust strip has generous vertical breathing room and no surrounding outline. A slim green top rule accents the dark contact panel; a matching vertical line beside the podcast heading creates a quieter editorial detail instead of another colored block. Hover and keyboard-focus feedback remain visible. White page surfaces, secondary actions, layout, disabled request fields, all wording and audio behavior are unchanged.
 
 Final visual polish uses a one-pixel heading border with one extra pixel of padding to preserve geometry, and quieter selected-choice typography. The selected fill, outline and accessible pressed state remain clear.
+
+## November annotated-PDF revision
+
+Reviewed all 10 rendered pages of Yami's annotated PDF before editing. This revision supersedes the earlier bright-green headline treatment: a softly framed beige hero, unboxed heading, original portrait, and lighter solid-green accents (no gradients). It implements the renamed navigation, licensed-broker captions, free/no-obligation wording, arrow-free consultation CTA, simpler services intro and removal of the duplicate service directory. The supplied service descriptions are unchanged.
+
+Request choices now sit on their shared panel border. Redundant preview headings are removed, but the explicit nonfunctional notice, disabled controls, no-network behavior, exact English consents and Spanish translations remain. No receiving endpoint or real calendar has been provided. The contact CTA links to that honest request section; actual call/text links remain in the contact details. Verified hours and walk-in language are unchanged. Contact details now place the address and hours first, then Ivan's direct call/text number, front office, and “Email Ivan.”
+
+The podcast has its own outlined box; its original audio, native player and range function remain unchanged. FAQs are centered and full-width rather than a narrow side column, with all 11 original answers retained. Footer social links are larger and ordered Linktree, Facebook, Instagram, X, LinkedIn.
+
+### Confirmation items for Yami (not publication blockers for the honest preview)
+
+- Supply the exact Medicare-directory review URL. No guessed link or dead review button is rendered.
+- Confirm the receiving system and privacy/retention handling before enabling requests; supply real availability if online scheduling is wanted.
+- The overwritten services heading was interpreted as “How Can We Help?”; current verified office hours remain Monday–Friday, 9 am–5 pm, with walk-ins welcome and appointments confirmed by phone.
+- The crossed-out hero cost explanation was shortened, not erased: “Free guidance and assistance. Insurance plan costs are separate.” This preserves the distinction between free advisory services and insurance coverage costs. Full costs context also remains in the services section.
+- Await Ivan's supplied biography and domain ownership/registration decision. Neither was invented or changed.
+
+Checks: all 77 tests and static build pass. Native local Chromium screenshot verification was attempted but blocked by the execution sandbox's socket restrictions. Deployed desktop/mobile visual QA remains required before presenting the revision as visually verified. No production merge or client email is part of this change.
