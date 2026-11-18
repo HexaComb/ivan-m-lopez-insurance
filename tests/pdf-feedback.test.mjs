@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {page,consent,employerConsent,disclosure,independence} from '../scripts/build.mjs';
 for(const lang of ['en','es'])test(`${lang}: annotated PDF changes preserve safe functional boundaries`,()=>{
- const html=page(lang),hero=html.match(/<section class="wrap hero[\s\S]*?<\/section>/)[0],contact=html.match(/<section class="wrap" id="contact">[\s\S]*?<\/section>/)[0];
+ const html=page(lang),hero=html.match(/<section class="hero-band"[\s\S]*?<\/section>/)[0],contact=html.match(/<section class="wrap" id="contact">[\s\S]*?<\/section>/)[0];
  assert.ok(html.includes(lang==='en'?'Our Services':'Nuestros servicios'));
  assert.ok(html.includes(lang==='en'?'Contact Us':'Contáctenos'));
  assert.ok(hero.includes(lang==='en'?'Licensed independent insurance broker':'Corredor de seguros independiente con licencia'));
@@ -32,3 +32,4 @@ test('soft-green controls retain strong readable contrast and mobile framing',as
  assert.ok(css.includes('.request-mode-controls button{flex-basis:100%'));
  assert.ok(css.includes('.faq-section{max-width:1060px}'));
 });
+

@@ -27,7 +27,7 @@ for(const lang of ['en','es']) {
   assert.ok(html.includes('id="coverage"'));
  });
  test(`${lang}: consultation links to a truthful disabled prototype`,()=>{
-  const html=page(lang),hero=html.match(/<section class="wrap hero[\s\S]*?<\/section>/)[0];
+  const html=page(lang),hero=html.match(/<section class="hero-band"[\s\S]*?<\/section>/)[0];
   assert.ok(hero.includes('href="#request-preview"'));
   assert.ok(hero.includes('href="tel:+19256846712"'));
   assert.ok(hero.includes('href="sms:+19256846712"'));
@@ -61,3 +61,4 @@ test('logo-green heading text and border exceed normal-text AA contrast',async()
  const contrast=(luminance(color('brand-green'))+.05)/(luminance(color('ink'))+.05);
  assert.ok(contrast>=4.5,`Heading and border contrast: ${contrast.toFixed(2)}:1`);
 });
+
