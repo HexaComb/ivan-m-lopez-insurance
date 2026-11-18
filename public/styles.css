@@ -294,3 +294,11 @@ body,.soft,.coverage-moment,.guide-index,.notes-sheet{background:#fff}
 @media(max-width:800px){.senior-hero{gap:32px}.senior-hero .advisor-portrait{margin-top:0}}
 @media(max-width:600px){.senior-hero{padding:28px 22px;margin-block:24px 32px}.senior-hero h1{font-size:clamp(2.05rem,8.5vw,2.7rem)}.request-frame{padding:0 18px 22px}.request-mode-controls{margin-inline:-19px;flex-wrap:wrap}.request-mode-controls button{flex-basis:100%;border-radius:0}.request-mode-controls button:first-child{border-radius:6px 6px 0 0}.podcast-section{padding:28px 22px}.footer-links{justify-content:flex-start;gap:12px 28px}.footer-identity .advisor-brand small{line-height:1.6}.faq-section>h2{margin-bottom:28px}}
 @media print{.senior-hero,.podcast-section{background:white}.senior-hero{border:0}.request-frame{border-color:black}}
+
+
+/* Full-bleed hero surface; content remains on the shared centered grid. */
+.hero-band{width:100%;background:var(--hero-beige)}
+.hero-band .senior-hero{background:transparent;border:0;border-radius:0;margin-block:0;padding:clamp(36px,4vw,58px) 0;gap:50px}
+@media(max-width:800px){.hero-band .senior-hero{gap:32px}}
+@media(max-width:600px){.hero-band .senior-hero{padding:32px 0;gap:28px}}
+@media print{.hero-band{background:white}}
