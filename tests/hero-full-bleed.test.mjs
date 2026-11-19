@@ -19,3 +19,11 @@ test('hero surface removes the inset card without viewport-width overflow hacks'
   assert.match(rules, /border:0;border-radius:0;margin-block:0/);
   assert.ok(!rules.includes('100vw'));
 });
+
+for(const lang of ['en','es'])test(`${lang}: direct hero actions do not lead visitors to the disabled form`,()=>{
+ const html=page(lang), hero=html.match(/<section class="hero-band"[\s\S]*?<\/section>/)[0];
+ assert.match(hero,/<a class="button" href="tel:\+19256846712">/);
+ assert.match(hero,/<a class="button secondary" href="sms:\+19256846712">/);
+ assert.doesNotMatch(hero,/#request-preview/);
+ assert.match(html,/<meta name="robots" content="noindex,nofollow">/);
+});
