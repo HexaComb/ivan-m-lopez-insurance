@@ -302,3 +302,25 @@ body,.soft,.coverage-moment,.guide-index,.notes-sheet{background:#fff}
 @media(max-width:800px){.hero-band .senior-hero{gap:32px}}
 @media(max-width:600px){.hero-band .senior-hero{padding:32px 0;gap:28px}}
 @media print{.hero-band{background:white}}
+
+/* Senior-friendly direct contact and always-visible coverage summaries. */
+.senior-hero .hero-actions{display:flex;flex-direction:row;align-items:stretch;flex-wrap:wrap;gap:12px;margin:20px 0 8px}
+.senior-hero .hero-actions .button{font-size:1rem;justify-content:center;text-align:center;min-height:56px}
+.senior-hero .hero-actions .secondary{border-color:var(--green)}
+.hero-phone{color:var(--muted);font-size:.95rem;margin-bottom:24px}
+.coverage-detail-pages.coverage-service-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;max-width:none;padding-top:0;border-top:0;align-items:start}
+.coverage-service-grid article{padding:clamp(18px,2.2vw,28px);border:1px solid var(--line);border-radius:10px;background:var(--paper);min-width:0}
+.coverage-service-grid h3{font-size:clamp(1.35rem,2.3vw,1.75rem);line-height:1.18}
+.coverage-summary,.coverage-details p{font-size:.95rem;line-height:1.65;color:var(--muted)}
+.coverage-summary{margin-bottom:10px}
+.coverage-details summary{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:48px;padding-block:8px;font-size:.95rem;font-weight:700;color:var(--ink);list-style:none;border-top:1px solid var(--line)}
+.coverage-details summary::-webkit-details-marker{display:none}
+.coverage-chevron{width:10px;height:10px;border:solid currentColor;border-width:0 2px 2px 0;transform:rotate(45deg);margin-right:4px;flex:none}
+.coverage-details[open] .coverage-chevron{transform:rotate(225deg)}
+.coverage-details p{margin:6px 0 0;white-space:pre-line}
+.visually-hidden{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.faq summary{min-height:48px;align-items:center}
+.menu-panel .section-link{min-height:48px;display:flex;align-items:center}
+.prototype-notice,.request-mode-controls button,.contact .small,.hero .small{font-size:.95rem}
+@media(max-width:800px){.coverage-detail-pages.coverage-service-grid{grid-template-columns:minmax(0,1fr);max-width:650px}}
+@media(max-width:600px){.senior-hero .hero-actions{display:grid;grid-template-columns:minmax(0,1fr)}.senior-hero .hero-actions .button{padding:12px 14px}}

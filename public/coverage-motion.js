@@ -21,6 +21,9 @@ export function initializeCoverageMotion(doc, env = window) {
     animation.onfinish = animation.oncancel = () => activeAnimations.delete(animation);
   }
   doc.querySelectorAll('[data-coverage-moment]').forEach(root => {
+    const controls = root.querySelector('[data-focus-controls]');
+    const initialButton = root.querySelector('[data-focus]');
+    if (!controls || !initialButton) return;
     root.querySelectorAll('[data-focus]').forEach(button => {
       button.addEventListener('click', () => {
         // Repeated clicks on the current topic do not replay motion.
@@ -31,8 +34,8 @@ export function initializeCoverageMotion(doc, env = window) {
           { duration: 350, easing: 'cubic-bezier(.22,1,.36,1)' });
       });
     });
-    root.querySelector('[data-focus-controls]').hidden = false;
-    selectCoverageDetail(root, root.querySelector('[data-focus]').dataset.focus);
+    controls.hidden = false;
+    selectCoverageDetail(root, initialButton.dataset.focus);
     root.classList.add('is-enhanced');
   });
   let observer;
@@ -62,3 +65,4 @@ export function initializeCoverageMotion(doc, env = window) {
   doc.addEventListener('visibilitychange', () => { if (doc.hidden) stopMotion(); });
   return { stopMotion };
 }
+

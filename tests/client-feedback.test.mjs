@@ -19,16 +19,16 @@ for(const lang of ['en','es']) {
   const html=page(lang);
   assert.equal(coverageDetails[lang].topics.length,3);
   for(const topic of serviceTopics[lang]) {
-   assert.ok(html.includes(`data-focus="${topic.id}"`));
+   assert.ok(html.includes(`aria-labelledby="service-${topic.id}"`));
    assert.ok(html.includes(`data-art="${topic.id}"`));
    assert.ok(html.includes(topic.label));
    assert.ok(html.includes(topic.text));
   }
   assert.ok(html.includes('id="coverage"'));
  });
- test(`${lang}: consultation links to a truthful disabled prototype`,()=>{
+ test(`${lang}: direct contact and truthful disabled prototype`,()=>{
   const html=page(lang),hero=html.match(/<section class="hero-band"[\s\S]*?<\/section>/)[0];
-  assert.ok(hero.includes('href="#request-preview"'));
+  assert.doesNotMatch(hero, /href="#request-preview"/);
   assert.ok(hero.includes('href="tel:+19256846712"'));
   assert.ok(hero.includes('href="sms:+19256846712"'));
   assert.ok(html.includes('<fieldset disabled'));
