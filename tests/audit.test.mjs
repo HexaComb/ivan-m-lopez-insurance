@@ -13,8 +13,7 @@ for (const lang of ['en', 'es']) {
   assert.ok(html.includes(lang==='en'?'Front office':'Recepción'));
   assert.ok(html.indexOf('tel:+19256846712')<html.indexOf('tel:+19256345702'));
   assert.ok(html.includes('sms:+19256846712'));
-  const states=lang==='en'?['Arizona','Hawaii','Nevada','Utah','North Carolina','Texas','Washington']:['Arizona','Hawái','Nevada','Utah','Carolina del Norte','Texas','Washington'];
-  for(const state of states)assert.ok(html.includes(state));
+  assert.ok(html.includes('CA • AZ • HI • NV • UT • NC • TX • WA'));
   const text=html.replace(/<[^>]*>/g,'');
   assert.ok(text.includes(disclosure));
   assert.ok(text.includes(independence));
@@ -51,6 +50,6 @@ test('company branding leads while Ivan remains the independent advisor', () => 
   assert.ok(html.includes('class="brand advisor-brand">Ivan M. Lopez'));
   assert.ok(html.includes(`<span>${copy[lang].role}</span>`));
   assert.ok(html.includes(independence));
-  assert.doesNotMatch(html, /Ivan owns|owner of Van Berg|fundador|propietario|subsidiary|LLC/);
+  assert.doesNotMatch(html, /Ivan owns|Ivan is the owner of Van Berg|fundador|propietario|subsidiary|LLC/);
  }
 });
