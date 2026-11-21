@@ -20,10 +20,10 @@ test('hero surface removes the inset card without viewport-width overflow hacks'
   assert.ok(!rules.includes('100vw'));
 });
 
-for(const lang of ['en','es'])test(`${lang}: hero offers consultation preview plus working call and text links`,()=>{
+for(const lang of ['en','es'])test(`${lang}: hero offers consultation preview plus front-office call and text links`,()=>{
  const html=page(lang), hero=html.match(/<section class="hero-band"[\s\S]*?<\/section>/)[0];
- assert.match(hero,/<a class="button secondary" href="tel:\+19256846712">/);
- assert.match(hero,/<a class="button secondary" href="sms:\+19256846712">/);
+ assert.match(hero,/<a class="button secondary" href="tel:\+19256345702">/);
+ assert.match(hero,/<a class="button secondary" href="sms:\+19256345702">/);
  assert.match(hero,/<a class="button" href="#request-preview">/);
  assert.doesNotMatch(hero.replace(/<[^>]*>/g,''),/684-6712/);
  assert.match(html,/<meta name="robots" content="noindex,nofollow">/);

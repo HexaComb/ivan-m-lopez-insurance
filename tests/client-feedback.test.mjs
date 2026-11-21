@@ -29,8 +29,8 @@ for(const lang of ['en','es']) {
  test(`${lang}: direct contact and truthful disabled prototype`,()=>{
   const html=page(lang),hero=html.match(/<section class="hero-band"[\s\S]*?<\/section>/)[0];
   assert.match(hero, /href="#request-preview"/);
-  assert.ok(hero.includes('href="tel:+19256846712"'));
-  assert.ok(hero.includes('href="sms:+19256846712"'));
+  assert.ok(hero.includes('href="tel:+19256345702"'));
+  assert.ok(hero.includes('href="sms:+19256345702"'));
   assert.ok(html.includes('<fieldset disabled'));
   assert.doesNotMatch(html,/<form|type="submit"|submit an appointment request through our website/);
   assert.ok(html.includes(consent));
