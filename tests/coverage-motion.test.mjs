@@ -33,12 +33,10 @@ test('bilingual coverage story has visible static content and a decorative SVG',
   const html=page(lang);
   assert.equal((html.match(/data-detail=/g)||[]).length,3);
   assert.doesNotMatch(html, /data-detail="[^"]+"[^>]*hidden/);
-  assert.doesNotMatch(html, /data-focus-controls/);
-  assert.equal((html.match(/class="coverage-summary"/g)||[]).length,3);
-  assert.equal((html.match(/<details class="coverage-details"/g)||[]).length,3);
-  for (const summary of coverageDetails[lang].summaries) assert.ok(html.includes(summary));
+  assert.match(html, /data-focus-controls hidden/);
+  assert.equal((html.match(/data-focus="/g)||[]).length,3);
+  assert.doesNotMatch(html, /coverage-summary|coverage-details|coverage-purpose/);
   assert.ok(html.includes('class="coverage-illustration" viewBox="0 0 700 390" fill="none" aria-hidden="true"'));
-  assert.ok(html.includes(coverageDetails[lang].note));
   for(const topic of coverageDetails[lang].topics)assert.ok(html.includes(topic.text));
  }
 });

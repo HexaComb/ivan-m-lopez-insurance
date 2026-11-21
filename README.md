@@ -149,3 +149,18 @@ The podcast has its own outlined box; its original audio, native player and rang
 - Await Ivan's supplied biography and domain ownership/registration decision. Neither was invented or changed.
 
 Checks: all 77 tests and static build pass. Native local Chromium screenshot verification was attempted but blocked by the execution sandbox's socket restrictions. Deployed desktop/mobile visual QA remains required before presenting the revision as visually verified. No production merge or client email is part of this change.
+
+## November 19 BugSmash feedback
+
+Implemented review comments #1–30 from [the BugSmash review](https://review.bugsmash.io/PdtLn) in both language pages:
+
+- #1–5, #19–20, #22: requested hero wording, consultation action, working call/text links, broker capitalization, and removal of duplicate phone/cost copy.
+- #6–9, #11, #16: restore the existing accessible service selector and full-width descriptions; remove the redundant summaries and guidance note. All three descriptions remain available without JavaScript.
+- #10, #12, #28–30: team contact wording, front-office number before the direct number, appointment guidance, and new contact heading/introduction.
+- #13–15: centered social icons with readable labels and the supplied review URL first; capitalize the footer broker title.
+- #17–18, #21, #27: supplied biography on the right, supplied personal photo on the left with the greeting and license number; remove the old introduction, process steps, and handwritten aside.
+- #23–26: state abbreviations in the trust strip, bilingual support on the right, removal of California-only service wording, and FAQ capitalization.
+
+The supplied `IMG_5505.jpeg` is stored unchanged as `public/assets/ivan-lopez-about.jpg` (3,131,600 bytes, SHA-256 `73173e27641fbfd566a6f5617102461c4c4d40655fd086e569216426d2ed6ab2`) and lazy-loaded in About. The original professional hero portrait is retained. The English biography uses the supplied text; the Spanish page includes a translation for client review. Comment #19's `TIme` typo is rendered as `Time`.
+
+Verification: `npm run check` passes all 82 tests and builds both pages. Local Chromium checks passed at 1440, 768, 390, and 320 pixels in both languages: keyboard service selection, exactly one selected/visible service, full-width descriptions, photo loading, footer destinations/order, contact order, and no horizontal overflow or JavaScript errors. Without JavaScript, all three services and native FAQs remain usable. Desktop/mobile screenshots were visually reviewed. Existing request fields remain a disabled preview; this revision does not activate collection or change the supplied disclosures.
