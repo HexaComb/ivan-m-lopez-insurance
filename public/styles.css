@@ -221,8 +221,6 @@ body,.soft,.coverage-moment,.guide-index,.notes-sheet{background:#fff}
 .senior-hero .advisor-portrait{align-self:start;margin-top:35px}
 .hero-actions{align-items:flex-start;flex-direction:column;gap:12px;margin-top:28px}
 .hero-actions .button{line-height:1.45;max-width:100%;text-align:left;justify-content:space-between}
-.hero-contact-box{max-width:100%;display:flex;flex-direction:column;align-items:flex-start}
-.hero-sms{display:inline-flex;align-items:center;min-height:44px;margin-top:2px;font-size:.95rem;text-underline-offset:4px}
 .service-promise{border-left-color:var(--brand-green)}
 .coverage-focus-controls{display:grid;grid-template-columns:1fr 1.3fr 1fr;gap:12px;max-width:1120px;margin:auto}
 .coverage-focus-controls button{border-radius:6px;padding:17px 18px;line-height:1.45;min-height:78px;font-size:1rem}
@@ -238,7 +236,7 @@ body,.soft,.coverage-moment,.guide-index,.notes-sheet{background:#fff}
 .senior-hero .eyebrow,.everyday-intro .eyebrow{font-size:.95rem}
 @media(max-width:1024px){.menu-ready .menu-panel>.lang,.menu-ready .menu-toggle,.menu-contact p,.menu-call{font-size:.95rem}.coverage-focus-controls{grid-template-columns:1fr}.coverage-focus-controls button{min-height:60px}}
 @media(max-width:800px){.senior-hero .advisor-portrait{margin-top:0}#questions.split{grid-template-columns:1fr;gap:25px}.question-mark{display:none}}
-@media(max-width:600px){.hero-actions,.hero-contact-box{width:100%}.hero-actions .button{width:100%;padding:16px 18px;font-size:1rem;text-align:center;justify-content:center}.hero-sms{align-self:center}.coverage-detail-pages h3{font-size:1.5rem}.everyday-intro h2{font-size:2.3rem}.trust .wrap,.footer-links,.brand small{font-size:.95rem}.coverage-focus-controls button{font-size:1rem}}
+@media(max-width:600px){.hero-actions{width:100%}.hero-actions .button{width:100%;padding:16px 18px;font-size:1rem;text-align:center;justify-content:center}.coverage-detail-pages h3{font-size:1.5rem}.everyday-intro h2{font-size:2.3rem}.trust .wrap,.footer-links,.brand small{font-size:.95rem}.coverage-focus-controls button{font-size:1rem}}
 @media print{#questions{display:block!important}.faq details{break-inside:avoid}.faq details>p{display:block!important}.faq{font-size:12pt}.question-mark{display:none}}
 /* Same-page request previews retain the approved visual language. */
 .request-mode-controls{display:flex;gap:14px;margin:30px 0;flex-wrap:wrap}
@@ -304,14 +302,14 @@ body,.soft,.coverage-moment,.guide-index,.notes-sheet{background:#fff}
 @media print{.hero-band{background:white}}
 
 /* Senior-friendly contact controls. */
-.senior-hero .hero-actions{display:flex;flex-direction:row;align-items:stretch;flex-wrap:wrap;gap:12px;margin:20px 0 8px}
-.senior-hero .hero-actions .button{font-size:1rem;justify-content:center;text-align:center;min-height:56px}
+.senior-hero .hero-actions{display:flex;flex-direction:row;align-items:center;flex-wrap:wrap;gap:12px;margin:20px 0 8px}
+.senior-hero .hero-actions .button{font-size:1rem;justify-content:center;text-align:center;min-height:56px;padding:14px 20px}
 .senior-hero .hero-actions .secondary{border-color:var(--green)}
 .visually-hidden{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 .faq summary{min-height:48px;align-items:center}
 .menu-panel .section-link{min-height:48px;display:flex;align-items:center}
 .prototype-notice,.request-mode-controls button,.contact .small,.hero .small{font-size:.95rem}
-@media(max-width:600px){.senior-hero .hero-actions{display:grid;grid-template-columns:minmax(0,1fr)}.senior-hero .hero-actions .button{padding:12px 14px}}
+@media(max-width:600px){.senior-hero .hero-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:stretch}.senior-hero .hero-actions>.button:first-child{grid-column:1/-1}.senior-hero .hero-actions .button{padding:12px 14px}}
 
 /* November BugSmash review: full-width services, personal bio, centered social links. */
 .trust .wrap{justify-content:space-between}

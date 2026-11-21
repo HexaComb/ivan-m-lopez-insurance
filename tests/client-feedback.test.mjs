@@ -40,7 +40,7 @@ for(const lang of ['en','es']) {
 }
 test('requested English labels and first-person introduction are exact',()=>{
  const html=page('en');
- for(const label of ['Request a Free Consultation','Call or Text Us at (925) 684-6712','How Can We Help?','Medicare Advantage','Medicare Supplement with Prescription Drug Plan','Employer & Group Health Plans','Let’s find coverage that works for you.','Give us a call','Licensed Independent Insurance Broker'])assert.ok(html.includes(label),label);
+ for(const label of ['Request a Free Consultation','Call Us','Text Us','How Can We Help?','Medicare Advantage','Medicare Supplement with Prescription Drug Plan','Employer & Group Health Plans','Let’s find coverage that works for you.','Give us a call','Licensed Independent Insurance Broker'])assert.ok(html.includes(label),label);
  assert.doesNotMatch(copy.en.lead,/Ivan M\. Lopez helps/);
 });
 test('PDF revision removes the green headline box and retains original portrait',async()=>{
